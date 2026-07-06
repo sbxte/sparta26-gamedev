@@ -42,3 +42,7 @@ func generate_next_segment() -> void:
 	add_child(new_segment)
 
 	last_segment = new_segment
+
+func move_children(delta: float) -> void:
+	for child: Segment in get_children():
+		child.position.x -= delta
