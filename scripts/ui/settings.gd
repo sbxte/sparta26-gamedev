@@ -1,0 +1,20 @@
+extends Node
+
+@export var BGM_progress_bar: TextureProgressBar
+@export var SFX_progress_bar: TextureProgressBar
+
+@onready var back_button: TextureButton = $Back
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	back_button.pivot_offset = back_button.size / 2
+
+func _on_bgm_slider_value_changed(value: float) -> void:
+	BGM_progress_bar.value = value
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+	SFX_progress_bar.value = value
+
+func _on_back_pressed() -> void:
+	UiAnimManager.clickAnim(back_button, Vector2(0.9, 0.9), Vector2.ONE, 0.05)
+	UiAnimManager.moveUpAnim(self, Vector2(0, -1080), 0.3)

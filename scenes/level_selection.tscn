@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bbh1nh454x0na"]
+
+[ext_resource type="Script" uid="uid://ctfwr81gxtou3" path="res://scripts/ui/level_selection.gd" id="1_tuscg"]
+[ext_resource type="Texture2D" uid="uid://chwb1gug63hf3" path="res://assets/placeholder/furina_background_placeholder.jpg" id="1_u1g2d"]
+[ext_resource type="PackedScene" uid="uid://d0iupvu7wdebc" path="res://scenes/level_select_element.tscn" id="2_gswpo"]
+[ext_resource type="Texture2D" uid="uid://diu7l5nxdj6ug" path="res://assets/placeholder/right-arrowplplaceholder.svg" id="4_42rqe"]
+[ext_resource type="Texture2D" uid="uid://btdlcf7lknm6e" path="res://assets/placeholder/furina-removebg-preview.png" id="4_rcujv"]
+
+[node name="LevelSelection" type="Control" unique_id=1878615944]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tuscg")
+metadata/_edit_horizontal_guides_ = [1214.0]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1495895290]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_u1g2d")
+
+[node name="GoalProgBar" type="TextureProgressBar" parent="Background" unique_id=334823575]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="LevelSelectElement" parent="Background" unique_id=1361947579 instance=ExtResource("2_gswpo")]
+layout_mode = 1
+offset_left = 227.0
+offset_top = 503.0
+offset_right = 227.0
+offset_bottom = 503.0
+rotation = -0.2635447
+
+[node name="LevelSelectElement2" parent="Background" unique_id=1979112597 instance=ExtResource("2_gswpo")]
+layout_mode = 1
+offset_left = 1960.0002
+offset_top = 980.0001
+offset_right = 1960.0
+offset_bottom = 980.0
+rotation = 0.37350047
+
+[node name="FinalRun" type="TextureRect" parent="." unique_id=1312163218]
+layout_mode = 0
+offset_left = 1920.0
+offset_right = 5760.0
+offset_bottom = 2160.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_u1g2d")
+
+[node name="Furina" type="TextureRect" parent="FinalRun" unique_id=1018317677]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 170.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_rcujv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=6790702]
+offset = Vector2(960, 540)
+
+[node name="Next" type="TextureButton" parent="Camera2D" unique_id=1034840586]
+offset_left = 1468.0
+offset_top = 322.0
+offset_right = 2268.0
+offset_bottom = 1122.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_42rqe")
+texture_pressed = ExtResource("4_42rqe")
+texture_hover = ExtResource("4_42rqe")
+
+[node name="Back" type="TextureButton" parent="Camera2D" unique_id=996828116]
+visible = false
+offset_left = 32.0
+offset_top = 326.0
+offset_right = 832.0
+offset_bottom = 1126.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_42rqe")
+texture_pressed = ExtResource("4_42rqe")
+texture_hover = ExtResource("4_42rqe")
+flip_h = true
+
+[node name="ToMainMenu" type="TextureButton" parent="Camera2D" unique_id=546465766]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Camera2D/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Camera2D/Back" to="." method="_on_back_pressed"]
