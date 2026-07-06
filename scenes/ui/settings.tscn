@@ -11,7 +11,7 @@ shader_parameter/blur = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n77a"]
 
-[node name="Settings" type="Control" unique_id=341765050 node_paths=PackedStringArray("BGM_progress_bar", "SFX_progress_bar")]
+[node name="Settings" type="Control" unique_id=341765050 node_paths=PackedStringArray("BGM_progress_bar", "SFX_progress_bar", "back_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_h175o")
 BGM_progress_bar = NodePath("HBoxContainer/BGMSlider/BGM")
 SFX_progress_bar = NodePath("HBoxContainer/SFXSlider/SFX")
+back_button = NodePath("Back")
 
 [node name="BlurPanel" type="Panel" parent="." unique_id=1065700968]
 material = SubResource("ShaderMaterial_byssr")

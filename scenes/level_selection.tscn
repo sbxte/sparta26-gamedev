@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://ctfwr81gxtou3" path="res://scripts/ui/level_selection.gd" id="1_tuscg"]
 [ext_resource type="Texture2D" uid="uid://chwb1gug63hf3" path="res://assets/placeholder/furina_background_placeholder.jpg" id="1_u1g2d"]
-[ext_resource type="PackedScene" uid="uid://d0iupvu7wdebc" path="res://scenes/level_select_element.tscn" id="2_gswpo"]
+[ext_resource type="PackedScene" uid="uid://bkk0ar1rewmcx" path="res://scenes/level_select_element.tscn" id="2_gswpo"]
 [ext_resource type="Texture2D" uid="uid://diu7l5nxdj6ug" path="res://assets/placeholder/right-arrowplplaceholder.svg" id="4_42rqe"]
 [ext_resource type="Texture2D" uid="uid://btdlcf7lknm6e" path="res://assets/placeholder/furina-removebg-preview.png" id="4_rcujv"]
 
-[node name="LevelSelection" type="Control" unique_id=1878615944]
+[node name="LevelSelection" type="Control" unique_id=1878615944 node_paths=PackedStringArray("next", "back", "camera")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tuscg")
+next = NodePath("Camera2D/Next")
+back = NodePath("Camera2D/Back")
+camera = NodePath("Camera2D")
 metadata/_edit_horizontal_guides_ = [1214.0]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1495895290]

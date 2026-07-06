@@ -2,8 +2,7 @@ extends Node
 
 @export var BGM_progress_bar: TextureProgressBar
 @export var SFX_progress_bar: TextureProgressBar
-
-@onready var back_button: TextureButton = $Back
+@export var back_button: TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

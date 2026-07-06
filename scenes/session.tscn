@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://cdijapj1vnu6i" path="res://scripts/session.gd" id="1_eemmi"]
 [ext_resource type="Script" uid="uid://eth4v8fn3tbl" path="res://scripts/player/player.gd" id="1_w6gu6"]
 [ext_resource type="Texture2D" uid="uid://coxijoew3wf8k" path="res://icon.svg" id="1_wfdo7"]
-[ext_resource type="Script" uid="uid://c6q3o1mntxbww" path="res://scripts/segment/handler.gd" id="2_t88s8"]
-[ext_resource type="PackedScene" uid="uid://dny7lk12jyu7d" path="res://scenes/segment/sample_segment.tscn" id="3_he6ka"]
-[ext_resource type="PackedScene" uid="uid://cf50cxy8ipbsj" path="res://scenes/segment/sample_empty_segment.tscn" id="4_igxl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnxdp"]
 size = Vector2(128, 256)
@@ -19,9 +16,8 @@ size = Vector2(204.8, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nedwo"]
 size = Vector2(5000, 60)
 
-[node name="Session" type="Node2D" unique_id=688184920 node_paths=PackedStringArray("segment_handler")]
+[node name="Session" type="Node2D" unique_id=688184920]
 script = ExtResource("1_eemmi")
-segment_handler = NodePath("Segments")
 
 [node name="UI" type="Control" parent="." unique_id=1869825928]
 layout_mode = 3
@@ -29,11 +25,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Segments" type="Node2D" parent="." unique_id=410255754 node_paths=PackedStringArray("session")]
-script = ExtResource("2_t88s8")
-session = NodePath("..")
-sample_segment = ExtResource("3_he6ka")
-sample_empty_segment = ExtResource("4_igxl8")
+[node name="Sections" type="Node2D" parent="." unique_id=410255754]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=910925497 node_paths=PackedStringArray("sprite_run", "collision_run", "sprite_jump", "collision_jump", "sprite_slide", "collision_slide")]
 position = Vector2(271, 427)
