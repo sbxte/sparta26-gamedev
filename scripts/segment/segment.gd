@@ -1,3 +1,3 @@
 @abstract
-class_name Section
+class_name Segment
 extends Node2D

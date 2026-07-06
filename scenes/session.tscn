@@ -25,7 +25,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Sections" type="Node2D" parent="." unique_id=410255754]
+[node name="Segments" type="Node2D" parent="." unique_id=410255754]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=910925497 node_paths=PackedStringArray("sprite_run", "collision_run", "sprite_jump", "collision_jump", "sprite_slide", "collision_slide")]
 position = Vector2(271, 427)
