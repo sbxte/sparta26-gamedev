@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bkpilw7emftwq"]
+
+[ext_resource type="Script" uid="uid://cvsocl4ai8rcv" path="res://scripts/ui/pause.gd" id="1_eq7dk"]
+[ext_resource type="Texture2D" uid="uid://chwb1gug63hf3" path="res://assets/placeholder/furina_background_placeholder.jpg" id="1_xld5c"]
+[ext_resource type="Texture2D" uid="uid://bsinmav51equg" path="res://assets/placeholder/play_placeholder.jpeg" id="2_5834a"]
+[ext_resource type="Texture2D" uid="uid://dlxpavoi7us36" path="res://assets/placeholder/settings_placeholder.jpeg" id="3_4x8ym"]
+[ext_resource type="Texture2D" uid="uid://d12ictsh3xidg" path="res://assets/placeholder/quit_placeholder.jpeg" id="4_eq7dk"]
+[ext_resource type="PackedScene" uid="uid://b3i67nh88f80g" path="res://scenes/ui/settings.tscn" id="6_arkwq"]
+
+[node name="Pause" type="Control" unique_id=1751295574 node_paths=PackedStringArray("button_array", "settings")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eq7dk")
+button_array = [NodePath("TextureRect/VBoxContainer/Resume"), NodePath("TextureRect/VBoxContainer/Settings"), NodePath("TextureRect/VBoxContainer/LevelSelect")]
+settings = NodePath("Settings")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2078336593]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xld5c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=959914316]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.5
+offset_top = -226.0
+offset_right = 247.5
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="TextureButton" parent="TextureRect/VBoxContainer" unique_id=1389736561]
+layout_mode = 2
+texture_normal = ExtResource("2_5834a")
+texture_pressed = ExtResource("2_5834a")
+texture_hover = ExtResource("2_5834a")
+
+[node name="Settings" type="TextureButton" parent="TextureRect/VBoxContainer" unique_id=199405858]
+layout_mode = 2
+texture_normal = ExtResource("3_4x8ym")
+texture_pressed = ExtResource("3_4x8ym")
+texture_hover = ExtResource("3_4x8ym")
+
+[node name="LevelSelect" type="TextureButton" parent="TextureRect/VBoxContainer" unique_id=53759689]
+layout_mode = 2
+texture_normal = ExtResource("4_eq7dk")
+texture_pressed = ExtResource("4_eq7dk")
+texture_hover = ExtResource("4_eq7dk")
+
+[node name="Settings" parent="." unique_id=341765050 instance=ExtResource("6_arkwq")]
+process_mode = 3
+layout_mode = 1
+offset_top = -1080.0
+offset_bottom = -1080.0
