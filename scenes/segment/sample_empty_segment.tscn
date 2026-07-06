@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cf50cxy8ipbsj"]
+
+[ext_resource type="Script" uid="uid://h5dvqw45q5pa" path="res://scripts/segment/sample.gd" id="1_h5tql"]
+[ext_resource type="Texture2D" uid="uid://di3mxoystak5k" path="res://assets/segments/sample_empty_segment.png" id="2_h5tql"]
+
+[node name="SampleSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
+script = ExtResource("1_h5tql")
+background = NodePath("Background")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1975032625]
+position = Vector2(440.2381, 324.16534)
+scale = Vector2(1.2313105, 1.2313104)
+texture = ExtResource("2_h5tql")

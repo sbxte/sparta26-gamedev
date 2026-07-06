@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dny7lk12jyu7d"]
+
+[ext_resource type="Script" uid="uid://h5dvqw45q5pa" path="res://scripts/segment/sample.gd" id="1_xyex5"]
+[ext_resource type="PackedScene" uid="uid://mnn41fplm4n4" path="res://scenes/obstacles/sample_static_obstacle.tscn" id="2_oib26"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7npdf"]
+load_path = "res://.godot/imported/samplesegment.png-7a257773464aede1c992dfa4342ada8e.ctex"
+
+[node name="SampleSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
+script = ExtResource("1_xyex5")
+background = NodePath("Background")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1975032625]
+position = Vector2(240.44444, 324.00952)
+scale = Vector2(1.0854026, 1.0854026)
+texture = SubResource("CompressedTexture2D_7npdf")
+
+[node name="SampleStaticObstacle" parent="." unique_id=1864811565 instance=ExtResource("2_oib26")]
+position = Vector2(223, 468)

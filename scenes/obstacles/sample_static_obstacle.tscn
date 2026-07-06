@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://mnn41fplm4n4"]
+
+[ext_resource type="Script" uid="uid://ct4nun8cpgeoo" path="res://scripts/obstacles/sample_static.gd" id="1_7mssi"]
+[ext_resource type="Texture2D" uid="uid://coxijoew3wf8k" path="res://icon.svg" id="1_oeoa4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnxdp"]
+size = Vector2(128, 128)
+
+[node name="SampleStaticObstacle" type="Node2D" unique_id=1864811565 node_paths=PackedStringArray("sprite", "area")]
+script = ExtResource("1_7mssi")
+sprite = NodePath("Sprite2D")
+area = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1425848187]
+texture = ExtResource("1_oeoa4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2107855764]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1374475605]
+shape = SubResource("RectangleShape2D_bnxdp")
