@@ -4,6 +4,12 @@
 [ext_resource type="Script" uid="uid://eth4v8fn3tbl" path="res://scripts/player/player.gd" id="1_w6gu6"]
 [ext_resource type="Texture2D" uid="uid://coxijoew3wf8k" path="res://icon.svg" id="1_wfdo7"]
 
+[sub_resource type="Curve" id="Curve_eemmi"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.1), 1.0, 1.0, 0, 0, Vector2(0.8, 0.9), 0.9, 1.0, 0, 0, Vector2(1, 1), 0.0, 1.0, 0, 0]
+point_count = 4
+metadata/_snap_count = 20
+metadata/_snap_enabled = true
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnxdp"]
 size = Vector2(128, 256)
 
@@ -18,6 +24,7 @@ size = Vector2(5000, 60)
 
 [node name="Session" type="Node2D" unique_id=688184920]
 script = ExtResource("1_eemmi")
+speed_curve = SubResource("Curve_eemmi")
 
 [node name="UI" type="Control" parent="." unique_id=1869825928]
 layout_mode = 3
