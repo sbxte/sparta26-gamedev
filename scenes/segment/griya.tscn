@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://jrkp4nrdqcbj"]
+
+[ext_resource type="Script" uid="uid://h5dvqw45q5pa" path="res://scripts/segment/sample.gd" id="1_kckyk"]
+[ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="2_8p6pt"]
+[ext_resource type="Texture2D" uid="uid://ojtpdu02gccb" path="res://assets/backgrounds/griya.png" id="2_xtnfj"]
+[ext_resource type="PackedScene" uid="uid://cug1c72jtgr8j" path="res://scenes/obstacles/car.tscn" id="3_xtnfj"]
+[ext_resource type="PackedScene" uid="uid://ceyogol2mnyqk" path="res://scenes/obstacles/flying_roga.tscn" id="4_ddxy0"]
+
+[node name="GriyaSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
+script = ExtResource("1_kckyk")
+background = NodePath("Road")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=381491701]
+position = Vector2(280, 10)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_xtnfj")
+centered = false
+
+[node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
+texture = ExtResource("2_8p6pt")
+centered = false
+
+[node name="Car1" parent="." unique_id=1864811565 instance=ExtResource("3_xtnfj")]
+position = Vector2(205, 828)
+speed = 0.0
+base_spawn_chance = 0.7
+
+[node name="Car2" parent="." unique_id=1294274527 instance=ExtResource("3_xtnfj")]
+position = Vector2(625, 828)
+speed = 0.0
+base_spawn_chance = 1.0
+
+[node name="Car3" parent="." unique_id=179972356 instance=ExtResource("3_xtnfj")]
+position = Vector2(1287, 828)
+speed = 0.0
+base_spawn_chance = 1.0
+
+[node name="Car4" parent="." unique_id=943190982 instance=ExtResource("3_xtnfj")]
+position = Vector2(1707, 828)
+speed = 0.0
+base_spawn_chance = 0.7
+
+[node name="FlyingRoga" parent="." unique_id=263970194 instance=ExtResource("4_ddxy0")]
+position = Vector2(1255, 555)
+speed = 20.0
+base_spawn_chance = 0.25
