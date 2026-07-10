@@ -32,6 +32,7 @@ static var sus_percentage: float = 0.0
 
 var running_time: float
 var step: float = 0.0
+var elapsed: float = 0.0   # real seconds spent running this session, for pace
 var _boost_factor: float = 0.0
 
 # Set from the level-select choice, persisted on the EventManager autoload.
@@ -39,18 +40,28 @@ var _boost_factor: float = 0.0
 # reads it to spawn the opening segments.
 var difficulty := EventManager.selected_difficulty
 
+func _ready() -> void:
+	# Dying (health hits 0) ends the run as a forced loss, no distance credit.
+	EventManager.player_hit.connect(_on_player_hit)
+
+func _on_player_hit(health: int) -> void:
+	if health == 0:
+		_end_run(true)
+
 func _physics_process(delta: float) -> void:
 	# Session handles segment movement on the possibility we will need to
 	# halt movement temporarily maybe due to a power up / animation, or for some
 	# other more advanced movement shenanigans. tldr future expandability.
 	if not is_running:
 		running_time = 0
-		speed = 0  
+		speed = 0
 		is_boosting = false
 		_boost_factor = 0.0
 		segment_handler.move_children(speed * delta) # Force stops, even if boosting
 		return
-	
+
+	elapsed += delta
+
 	# Base Speed
 	var base_speed := lerpf(0.0, max_speed, speed_curve.sample_baked(running_time / time_to_max_speed))
 	running_time = min(running_time + delta, time_to_max_speed)
@@ -90,23 +101,29 @@ func _process(_delta: float) -> void:
 		player_ui.update_speed(roundi(speed * units_to_kmh))
 	
 
-func _end_run() -> void:
+func _end_run(forced_loss := false) -> void:
 	if not is_running:
 		return
-		
+
 	is_running = false
 	is_boosting = false
-	
+
 	#convert step to km
 	var session_km := step / 6767.0
-	
-	# 2,4 km or not?
-	if step >= 2400.0:
+
+	# A completed run clears the 2.4 km quota. Dying (forced_loss) never counts.
+	var won := step >= 2400.0 and not forced_loss
+
+	# Snapshot this run's stats for the results screen (Session is freed on nav).
+	EventManager.last_run_km = session_km
+	EventManager.last_run_pace = session_km / (elapsed / 3600.0) if elapsed > 0.0 else 0.0
+
+	if won:
 		EventManager.total_km += session_km
 		EventManager.run_completed.emit()
 	else:
 		EventManager.run_invalid.emit()
-		
+
 	# for triggering the end
 	var is_max_session_passed = EventManager.current_session > EventManager.max_sessions
 	var is_quota_met = EventManager.total_km >= EventManager.target_total
@@ -118,12 +135,13 @@ func _end_run() -> void:
 			EventManager.unlock_final_test.emit()
 			if is_max_session_passed: #kalo udah 20 session bakal force final test
 				EventManager.force_final_test.emit()
-		
+
 		# next session
 		EventManager.current_session += 1
 
 	EventManager.end_sesh.emit()
-	get_tree().change_scene_to_file("res://scenes/ui/results.tscn")
+	var result_scene := "res://scenes/ui/result_win.tscn" if won else "res://scenes/ui/result_lose.tscn"
+	get_tree().change_scene_to_file(result_scene)
 
 func init_session(_difficulty: int) -> void:
 	# TODO: difficulty param is just a placeholder. The point is to accept difficulty information from level selection menu and adjust the session accordingly.
