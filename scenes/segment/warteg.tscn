@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c5y7fmrmtl6qf"]
+
+[ext_resource type="Script" uid="uid://h5dvqw45q5pa" path="res://scripts/segment/sample.gd" id="1_cbmjf"]
+[ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="2_8a4mv"]
+[ext_resource type="PackedScene" uid="uid://cug1c72jtgr8j" path="res://scenes/obstacles/car.tscn" id="3_8elus"]
+
+[node name="WartegSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
+script = ExtResource("1_cbmjf")
+background = NodePath("Road")
+
+[node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
+texture = ExtResource("2_8a4mv")
+centered = false
+
+[node name="Car" parent="." unique_id=1864811565 instance=ExtResource("3_8elus")]
+position = Vector2(1353, 828)
+speed = 0.0
