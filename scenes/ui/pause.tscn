@@ -25,6 +25,7 @@ grow_vertical = 2
 script = ExtResource("1_eq7dk")
 button_array = [NodePath("TextureRect/HBoxContainer/Resume"), NodePath("TextureRect/HBoxContainer/Settings"), NodePath("TextureRect/HBoxContainer/LevelSelect")]
 settings = NodePath("Settings")
+click_sfx = "res://assets/audio/sfx/CLICK.wav"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2078336593]
 layout_mode = 1

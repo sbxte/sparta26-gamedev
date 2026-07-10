@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://coa42bwswub8o"]
+
+[ext_resource type="Script" uid="uid://bp1a6u6j54qwe" path="res://scripts/ui/player_ui.gd" id="1_pc08v"]
+[ext_resource type="Texture2D" uid="uid://bqjfiwnltvvih" path="res://assets/ui/level/suspicion bar 1.png" id="2_tybkg"]
+[ext_resource type="Texture2D" uid="uid://bvtih0onmmkj8" path="res://assets/ui/level/fill suspicion bar 1.png" id="3_a4em4"]
+[ext_resource type="Texture2D" uid="uid://cha564asg7aqf" path="res://assets/ui/level/health1 1.png" id="4_gxl1c"]
+[ext_resource type="FontFile" uid="uid://bt85uuytnuapv" path="res://assets/fonts/Tiny5-Regular.ttf" id="5_tybkg"]
+[ext_resource type="Texture2D" uid="uid://b5xgy6itgy6jn" path="res://assets/ui/pause/pause1.png" id="6_0cbkn"]
+[ext_resource type="Texture2D" uid="uid://4kyj43bba5jw" path="res://assets/ui/pause/pause3.png" id="7_wm4y2"]
+[ext_resource type="Texture2D" uid="uid://r6ehujm6wsoy" path="res://assets/ui/pause/pause2.png" id="8_yrfg3"]
+[ext_resource type="PackedScene" uid="uid://bkpilw7emftwq" path="res://scenes/ui/pause.tscn" id="9_llniq"]
+
+[node name="PlayerUI" type="Control" unique_id=1641125104 node_paths=PackedStringArray("HP", "SusBar", "SpeedLabel", "DistanceLabel", "pause_node")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pc08v")
+HP = [NodePath("HBoxContainer2/VBoxContainer/HBoxContainer/Health1"), NodePath("HBoxContainer2/VBoxContainer/HBoxContainer/Health2"), NodePath("HBoxContainer2/VBoxContainer/HBoxContainer/Health3")]
+SusBar = NodePath("HBoxContainer2/VBoxContainer/SusBar")
+EmptyHealthPath = "res://assets/ui/level/health2 1.png"
+SpeedLabel = NodePath("HBoxContainer2/HBoxContainer/Speed")
+DistanceLabel = NodePath("HBoxContainer2/HBoxContainer/Distance")
+pause_node = NodePath("Pause")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1027846778]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2" unique_id=1987588726]
+layout_mode = 2
+
+[node name="SusBar" type="TextureProgressBar" parent="HBoxContainer2/VBoxContainer" unique_id=1306160134]
+layout_mode = 2
+texture_under = ExtResource("2_tybkg")
+texture_progress = ExtResource("3_a4em4")
+texture_progress_offset = Vector2(76, 47)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer" unique_id=439718053]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Health1" type="TextureRect" parent="HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=403837356]
+layout_mode = 2
+texture = ExtResource("4_gxl1c")
+
+[node name="Health2" type="TextureRect" parent="HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1826247313]
+layout_mode = 2
+texture = ExtResource("4_gxl1c")
+
+[node name="Health3" type="TextureRect" parent="HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1689681664]
+layout_mode = 2
+texture = ExtResource("4_gxl1c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2" unique_id=107634465]
+layout_mode = 2
+
+[node name="Speed" type="RichTextLabel" parent="HBoxContainer2/HBoxContainer" unique_id=2004226481]
+custom_minimum_size = Vector2(330, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("5_tybkg")
+theme_override_font_sizes/normal_font_size = 42
+text = "Speed: 6767 km/h"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Distance" type="RichTextLabel" parent="HBoxContainer2/HBoxContainer" unique_id=646100850]
+custom_minimum_size = Vector2(373, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("5_tybkg")
+theme_override_font_sizes/normal_font_size = 42
+text = "Distance: 6767 km"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseContainer" type="HBoxContainer" parent="." unique_id=1191260701]
+layout_mode = 0
+offset_left = 1750.0
+offset_top = 50.0
+offset_right = 2070.0
+offset_bottom = 434.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Pause" type="TextureButton" parent="PauseContainer" unique_id=1845745269]
+layout_mode = 2
+texture_normal = ExtResource("6_0cbkn")
+texture_pressed = ExtResource("7_wm4y2")
+texture_hover = ExtResource("8_yrfg3")
+
+[node name="Pause" parent="." unique_id=1751295574 instance=ExtResource("9_llniq")]
+layout_mode = 1
+offset_top = -1080.0
+offset_bottom = -1080.0
+
+[connection signal="pressed" from="PauseContainer/Pause" to="." method="_on_pause_pressed"]

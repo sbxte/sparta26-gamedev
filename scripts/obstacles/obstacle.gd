@@ -7,5 +7,3 @@ extends Node2D
 
 @abstract
 func setup(ses: Session, chance: float) -> void
-
-

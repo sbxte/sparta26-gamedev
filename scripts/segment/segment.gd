@@ -11,6 +11,8 @@ func init_segment(ses: Session) -> void:
 				chance += 0.3
 			elif ses.difficulty == Constants.SessionDifficulty.HARD:
 				chance += 0.75
+			elif ses.difficulty == Constants.SessionDifficulty.FINAL:
+				chance += 0.9
 			child.setup(ses, chance)
 
 @abstract 

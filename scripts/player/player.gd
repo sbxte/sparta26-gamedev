@@ -10,7 +10,7 @@ var health := 3
 @export_group("States")
 @export var sprite_run: AnimatedSprite2D
 @export var collision_run: CollisionShape2D
-@export var sprite_jump: Sprite2D
+@export var sprite_jump: AnimatedSprite2D
 @export var collision_jump: CollisionShape2D
 @export var sprite_slide: AnimatedSprite2D
 @export var collision_slide: CollisionShape2D
@@ -47,6 +47,7 @@ func _process(_delta: float) -> void:
 
 func hit():
 	health = health-1
+	EventManager.emit_signal("player_hit", health)
 	if health == 0:
 		get_tree().change_scene_to_file("res://scenes/ui/results.tscn")
 	

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sparta26"
-run/main_scene="uid://byw6tm2me7dia"
+run/main_scene="uid://coa42bwswub8o"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://ciplpytokmng1"
 UiAnimManager="*uid://caujplngf2b8i"
 EventManager="*uid://cp3sngqcypj3d"
 AudioManager="*uid://bq6ygmbm4yotd"
+Global="*uid://c3frl0gbikwql"
 
 [display]
 
