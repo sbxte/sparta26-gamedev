@@ -42,6 +42,10 @@ func _ready() -> void:
 	distance_tracker = player_ui.DistanceLabel
 	speed_label = player_ui.SpeedLabel
 	sus_bar = player_ui.SusBar
+# Set from the level-select choice, persisted on the EventManager autoload.
+# Member init runs before any _ready, so this is set before SegmentHandler._ready
+# reads it to spawn the opening segments.
+var difficulty := EventManager.selected_difficulty
 
 func _physics_process(delta: float) -> void:
 	# Session handles segment movement on the possibility we will need to

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://byw6tm2me7dia"]
 
 [ext_resource type="Script" uid="uid://ccv8egfm7x734" path="res://scripts/ui/main_menu.gd" id="1_btxxm"]
-[ext_resource type="Texture2D" uid="uid://d0fy6hlhmisy2" path="res://assets/background/skybackground.png" id="2_877pj"]
-[ext_resource type="Texture2D" uid="uid://c6vgs18x5ernv" path="res://assets/background/ITB.png" id="3_ayp64"]
+[ext_resource type="Texture2D" uid="uid://c36s2jxmsy7lg" path="res://assets/foregrounds/skybackground.png" id="2_877pj"]
+[ext_resource type="Texture2D" uid="uid://knnyjf0ok08w" path="res://assets/backgrounds/itb.png" id="3_ayp64"]
 [ext_resource type="Texture2D" uid="uid://dk0fosp3xfnbk" path="res://assets/ui/main_menu/start1.png" id="3_q85j6"]
 [ext_resource type="Texture2D" uid="uid://l8ck5dngoqc7" path="res://assets/ui/main_menu/start3.png" id="4_7suek"]
 [ext_resource type="Shader" uid="uid://ckpgn4jonq0b0" path="res://scenes/ui/blur_shader.gdshader" id="4_y2j7i"]
@@ -22,7 +22,7 @@ shader_parameter/blur = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw24t"]
 
-[node name="MainMenu" type="Control" unique_id=1570175146 node_paths=PackedStringArray("button_array", "settings")]
+[node name="MainMenu" type="Control" unique_id=1570175146 node_paths=PackedStringArray("settings")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,10 +30,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_btxxm")
-button_array = [NodePath("VBoxContainer/Play"), NodePath("VBoxContainer/Settings"), NodePath("VBoxContainer/Quit")]
-settings = NodePath("Settings")
 BGMPath = "res://assets/audio/music/Summer Sunday (Main Menu) -  celestialghost8.wav"
 ClickSound = "res://assets/audio/sfx/CLICK.wav"
+settings = NodePath("Settings")
 
 [node name="Blur" type="TextureRect" parent="." unique_id=495443876]
 layout_mode = 0

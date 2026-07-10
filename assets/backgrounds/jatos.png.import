@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6vgs18x5ernv"
-path="res://.godot/imported/ITB.png-4dfcdd37a0827222a5e262eec700de5e.ctex"
+uid="uid://cnkwmp34ncmbk"
+path="res://.godot/imported/jatos.png-f3874e11c57288482f19f5a612b8cb0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/ITB.png"
-dest_files=["res://.godot/imported/ITB.png-4dfcdd37a0827222a5e262eec700de5e.ctex"]
+source_file="res://assets/backgrounds/jatos.png"
+dest_files=["res://.godot/imported/jatos.png-f3874e11c57288482f19f5a612b8cb0e.ctex"]
 
 [params]
 

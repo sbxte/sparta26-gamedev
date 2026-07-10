@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://riyy7j4d4tro" path="res://assets/ui/commons/back3.png" id="22_2t0gt"]
 [ext_resource type="Texture2D" uid="uid://dr76l4u5y0ehp" path="res://assets/ui/commons/back2.png" id="23_6rioq"]
 
-[node name="LevelSelection" type="Control" unique_id=1878615944 node_paths=PackedStringArray("ToMainMenu", "Easy", "Medium", "Hard", "FinalLevel")]
+[node name="LevelSelection" type="Control" unique_id=1878615944 node_paths=PackedStringArray("sesh_left", "progress", "ToMainMenu", "Easy", "Medium", "Hard", "FinalLevel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +32,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tuscg")
+sesh_left = NodePath("UI/VBoxContainer/HBoxContainer/SeshLeft/SessionsLeft")
+progress = NodePath("UI/VBoxContainer/HBoxContainer/OverallProgress")
 ToMainMenu = NodePath("UI/BackContainer/Back")
 Easy = NodePath("UI/HBoxContainer3/Easy")
 Medium = NodePath("UI/HBoxContainer3/Medium")
