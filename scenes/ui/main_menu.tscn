@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://byw6tm2me7dia"]
 
 [ext_resource type="Script" uid="uid://ccv8egfm7x734" path="res://scripts/ui/main_menu.gd" id="1_btxxm"]
-[ext_resource type="Texture2D" uid="uid://chwb1gug63hf3" path="res://assets/placeholder/furina_background_placeholder.jpg" id="2_wb0q5"]
+[ext_resource type="Texture2D" uid="uid://d0fy6hlhmisy2" path="res://assets/background/skybackground.png" id="2_877pj"]
+[ext_resource type="Texture2D" uid="uid://c6vgs18x5ernv" path="res://assets/background/ITB.png" id="3_ayp64"]
 [ext_resource type="Texture2D" uid="uid://dk0fosp3xfnbk" path="res://assets/ui/main_menu/start1.png" id="3_q85j6"]
 [ext_resource type="Texture2D" uid="uid://l8ck5dngoqc7" path="res://assets/ui/main_menu/start3.png" id="4_7suek"]
+[ext_resource type="Shader" uid="uid://ckpgn4jonq0b0" path="res://scenes/ui/blur_shader.gdshader" id="4_y2j7i"]
 [ext_resource type="Texture2D" uid="uid://br55sms6vmt3a" path="res://assets/ui/main_menu/start2.png" id="5_otr3d"]
 [ext_resource type="Texture2D" uid="uid://88gvrtd6ywjl" path="res://assets/ui/main_menu/settings1.png" id="6_8ekit"]
 [ext_resource type="Texture2D" uid="uid://gipngq3fa88w" path="res://assets/placeholder/placeholder_title.png" id="6_otr3d"]
@@ -13,6 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://df7n8wwrvvtk0" path="res://assets/ui/main_menu/quit1.png" id="9_ayp64"]
 [ext_resource type="Texture2D" uid="uid://bxmpi4vnfgkji" path="res://assets/ui/main_menu/quit3.png" id="10_y2j7i"]
 [ext_resource type="Texture2D" uid="uid://c7jb0d40lxau2" path="res://assets/ui/main_menu/quit2.png" id="11_y1h5l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1h5l"]
+shader = ExtResource("4_y2j7i")
+shader_parameter/blur = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw24t"]
 
 [node name="MainMenu" type="Control" unique_id=1570175146 node_paths=PackedStringArray("button_array", "settings")]
 layout_mode = 3
@@ -26,12 +34,27 @@ button_array = [NodePath("VBoxContainer/Play"), NodePath("VBoxContainer/Settings
 settings = NodePath("Settings")
 BGMPath = "res://assets/audio/music/Summer Sunday (Main Menu) -  celestialghost8.wav"
 
+[node name="Blur" type="TextureRect" parent="." unique_id=495443876]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_877pj")
+
 [node name="Background" type="TextureRect" parent="." unique_id=1197555552]
 layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_wb0q5")
+texture = ExtResource("3_ayp64")
+
+[node name="BlurPanel" type="Panel" parent="." unique_id=1717521444]
+material = SubResource("ShaderMaterial_y1h5l")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pw24t")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=196478765]
 layout_mode = 1
@@ -40,9 +63,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -203.0
+offset_left = -177.0
 offset_top = -150.0
-offset_right = 821.0
+offset_right = 847.0
 offset_bottom = 2930.0
 grow_horizontal = 2
 grow_vertical = 2
