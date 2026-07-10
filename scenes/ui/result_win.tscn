@@ -1,24 +1,32 @@
 [gd_scene format=3 uid="uid://dst7kopxl70m8"]
 
-[ext_resource type="Texture2D" uid="uid://chpc1r72lu6oc" path="res://assets/ui/commons/skybackground.png" id="1_5s4m3"]
-[ext_resource type="Texture2D" uid="uid://dv1ak6ovpa7fo" path="res://assets/ui/commons/sun.png" id="2_oks0h"]
-[ext_resource type="Texture2D" uid="uid://dhrtnkscw2vxd" path="res://assets/ui/results/container 1.png" id="3_6m62n"]
-[ext_resource type="Texture2D" uid="uid://c8l1opblbyx0y" path="res://assets/ui/results/win.png" id="4_5uxt7"]
-[ext_resource type="FontFile" uid="uid://bt85uuytnuapv" path="res://assets/fonts/Tiny5-Regular.ttf" id="5_f6s8k"]
-[ext_resource type="Texture2D" uid="uid://rh5pgun6l1l4" path="res://assets/ui/results/run again1.png" id="6_t62my"]
-[ext_resource type="Texture2D" uid="uid://c7p7xl2ghyagw" path="res://assets/ui/results/run again3.png" id="7_7qyqy"]
-[ext_resource type="Texture2D" uid="uid://riubwqbcw51m" path="res://assets/ui/results/run again2.png" id="8_lfcy4"]
-[ext_resource type="Texture2D" uid="uid://cs30ruainryd3" path="res://assets/ui/results/level slct1.png" id="9_n4uv6"]
-[ext_resource type="Texture2D" uid="uid://dxdkg06pkac0c" path="res://assets/ui/results/level slct3.png" id="10_tw151"]
-[ext_resource type="Texture2D" uid="uid://cp7514ld30mug" path="res://assets/ui/results/level slct2.png" id="11_nkk7w"]
+[ext_resource type="Script" uid="uid://dj8p8yw7fodg4" path="res://scripts/ui/results.gd" id="1_1yfqp"]
+[ext_resource type="Texture2D" uid="uid://chpc1r72lu6oc" path="res://assets/ui/commons/skybackground.png" id="2_qfs7q"]
+[ext_resource type="Texture2D" uid="uid://dv1ak6ovpa7fo" path="res://assets/ui/commons/sun.png" id="3_y7qxm"]
+[ext_resource type="Texture2D" uid="uid://dhrtnkscw2vxd" path="res://assets/ui/results/container 1.png" id="4_c5hvi"]
+[ext_resource type="Texture2D" uid="uid://c8l1opblbyx0y" path="res://assets/ui/results/win.png" id="5_jpf80"]
+[ext_resource type="FontFile" uid="uid://bt85uuytnuapv" path="res://assets/fonts/Tiny5-Regular.ttf" id="6_6f4fk"]
+[ext_resource type="Texture2D" uid="uid://rh5pgun6l1l4" path="res://assets/ui/results/run again1.png" id="7_k1m6p"]
+[ext_resource type="Texture2D" uid="uid://c7p7xl2ghyagw" path="res://assets/ui/results/run again3.png" id="8_ppdx2"]
+[ext_resource type="Texture2D" uid="uid://riubwqbcw51m" path="res://assets/ui/results/run again2.png" id="9_55him"]
+[ext_resource type="Texture2D" uid="uid://cs30ruainryd3" path="res://assets/ui/results/level slct1.png" id="10_cke8f"]
+[ext_resource type="Texture2D" uid="uid://dxdkg06pkac0c" path="res://assets/ui/results/level slct3.png" id="11_dhnrn"]
+[ext_resource type="Texture2D" uid="uid://cp7514ld30mug" path="res://assets/ui/results/level slct2.png" id="12_65fcy"]
 
-[node name="ResultWin" type="Control" unique_id=1532253648]
+[node name="ResultWin" type="Control" unique_id=1532253648 node_paths=PackedStringArray("distance_value", "session_value", "progress_value", "pace_value", "run_again", "level_select")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1yfqp")
+distance_value = NodePath("UI/VBoxContainer3/RichTextLabel")
+session_value = NodePath("UI/VBoxContainer3/RichTextLabel5")
+progress_value = NodePath("UI/VBoxContainer3/RichTextLabel6")
+pace_value = NodePath("UI/VBoxContainer3/RichTextLabel7")
+run_again = NodePath("UI/TextureButton")
+level_select = NodePath("UI/TextureButton2")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1453123914]
 layout_mode = 1
@@ -29,7 +37,7 @@ anchor_right = 1.3333334
 anchor_bottom = 1.3333334
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5s4m3")
+texture = ExtResource("2_qfs7q")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sun" type="TextureRect" parent="." unique_id=1332176941]
@@ -39,7 +47,7 @@ offset_top = 17.999998
 offset_right = 4779.0
 offset_bottom = 3218.0
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_oks0h")
+texture = ExtResource("3_y7qxm")
 
 [node name="UI" type="TextureRect" parent="." unique_id=1913870980]
 layout_mode = 1
@@ -54,7 +62,7 @@ offset_right = -406.0
 offset_bottom = -298.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_6m62n")
+texture = ExtResource("4_c5hvi")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI" unique_id=1559178440]
@@ -65,7 +73,7 @@ anchor_top = -0.14622642
 anchor_right = 0.9128224
 anchor_bottom = 0.2562893
 grow_horizontal = 2
-texture = ExtResource("4_5uxt7")
+texture = ExtResource("5_jpf80")
 expand_mode = 3
 metadata/_edit_use_anchors_ = true
 
@@ -78,7 +86,7 @@ anchor_right = 0.5909461
 anchor_bottom = 0.59375
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 80
 text = "win"
 horizontal_alignment = 1
@@ -99,7 +107,7 @@ offset_bottom = 59.53174
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.02745098, 0.5372549, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 45
 text = "Congrats! You finished this session"
 horizontal_alignment = 1
@@ -126,7 +134,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Distance"
 
@@ -134,7 +142,7 @@ text = "Distance"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Session"
 
@@ -142,7 +150,7 @@ text = "Session"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Distance Progress"
 
@@ -150,7 +158,7 @@ text = "Distance Progress"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Pace"
 
@@ -168,7 +176,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Distance"
 horizontal_alignment = 2
@@ -177,7 +185,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Session"
 horizontal_alignment = 2
@@ -186,7 +194,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Distance Progress"
 horizontal_alignment = 2
@@ -195,7 +203,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_f6s8k")
+theme_override_fonts/normal_font = ExtResource("6_6f4fk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Pace"
 horizontal_alignment = 2
@@ -206,9 +214,9 @@ offset_left = 17.0
 offset_top = 375.0
 offset_right = 374.0
 offset_bottom = 639.0
-texture_normal = ExtResource("6_t62my")
-texture_pressed = ExtResource("7_7qyqy")
-texture_hover = ExtResource("8_lfcy4")
+texture_normal = ExtResource("7_k1m6p")
+texture_pressed = ExtResource("8_ppdx2")
+texture_hover = ExtResource("9_55him")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -218,8 +226,11 @@ offset_left = 484.0
 offset_top = 375.0
 offset_right = 841.0
 offset_bottom = 639.0
-texture_normal = ExtResource("9_n4uv6")
-texture_pressed = ExtResource("10_tw151")
-texture_hover = ExtResource("11_nkk7w")
+texture_normal = ExtResource("10_cke8f")
+texture_pressed = ExtResource("11_dhnrn")
+texture_hover = ExtResource("12_65fcy")
 ignore_texture_size = true
 stretch_mode = 5
+
+[connection signal="pressed" from="UI/TextureButton" to="." method="_on_run_again_pressed"]
+[connection signal="pressed" from="UI/TextureButton2" to="." method="_on_level_select_pressed"]
