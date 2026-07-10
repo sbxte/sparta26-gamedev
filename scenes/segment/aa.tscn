@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cpitcp876dh0"]
+
+[ext_resource type="Script" uid="uid://h5dvqw45q5pa" path="res://scripts/segment/sample.gd" id="1_1ymmx"]
+[ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="3_jctj5"]
+[ext_resource type="PackedScene" uid="uid://ceyogol2mnyqk" path="res://scenes/obstacles/flying_roga.tscn" id="4_1ymmx"]
+[ext_resource type="PackedScene" uid="uid://cug1c72jtgr8j" path="res://scenes/obstacles/car.tscn" id="4_sa2ft"]
+
+[node name="AASegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
+script = ExtResource("1_1ymmx")
+background = NodePath("Road")
+
+[node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
+texture = ExtResource("3_jctj5")
+centered = false
+
+[node name="Car" parent="." unique_id=1864811565 instance=ExtResource("4_sa2ft")]
+position = Vector2(795, 828)
+speed = 0.0
+base_spawn_chance = 0.25
+
+[node name="FlyingRogaStatic" parent="." unique_id=1582502042 instance=ExtResource("4_1ymmx")]
+position = Vector2(221, 555)
+speed = 0.0
+base_spawn_chance = 1.0
+
+[node name="FlyingRogaMoving" parent="." unique_id=263970194 instance=ExtResource("4_1ymmx")]
+position = Vector2(1587, 555)
+speed = 20.0
+base_spawn_chance = 1.0
