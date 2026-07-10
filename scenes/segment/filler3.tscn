@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d3hlu3kvyny4v"]
+
+[ext_resource type="Script" uid="uid://h5dvqw45q5pa" path="res://scripts/segment/sample.gd" id="1_eyabo"]
+[ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="2_6mxw7"]
+[ext_resource type="PackedScene" uid="uid://cug1c72jtgr8j" path="res://scenes/obstacles/car.tscn" id="3_jtkxd"]
+[ext_resource type="PackedScene" uid="uid://ceyogol2mnyqk" path="res://scenes/obstacles/flying_roga.tscn" id="4_xcy7o"]
+
+[node name="Filler3Segment" type="Node2D" unique_id=1160094697]
+script = ExtResource("1_eyabo")
+segment_length = 5760
+
+[node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
+texture = ExtResource("2_6mxw7")
+centered = false
+
+[node name="Road2" type="Sprite2D" parent="." unique_id=1510339295]
+position = Vector2(1920, 0)
+texture = ExtResource("2_6mxw7")
+centered = false
+
+[node name="Road3" type="Sprite2D" parent="." unique_id=1398757146]
+position = Vector2(3840, 0)
+texture = ExtResource("2_6mxw7")
+centered = false
+
+[node name="Car" parent="." unique_id=1864811565 instance=ExtResource("3_jtkxd")]
+position = Vector2(394, 824)
+speed = 30.0
+right = true
+base_spawn_chance = 1.0
+
+[node name="Car2" parent="." unique_id=1337670662 instance=ExtResource("3_jtkxd")]
+position = Vector2(892, 827)
+speed = 30.0
+right = true
+base_spawn_chance = 0.25
+
+[node name="Car3" parent="." unique_id=492551215 instance=ExtResource("3_jtkxd")]
+position = Vector2(1451, 822)
+speed = 30.0
+right = true
+
+[node name="Car4" parent="." unique_id=1500754608 instance=ExtResource("3_jtkxd")]
+position = Vector2(2410, 824)
+speed = 30.0
+right = true
+
+[node name="Car5" parent="." unique_id=848750707 instance=ExtResource("3_jtkxd")]
+position = Vector2(2716, 827)
+speed = 30.0
+right = true
+base_spawn_chance = 1.0
+
+[node name="Car6" parent="." unique_id=245724418 instance=ExtResource("3_jtkxd")]
+position = Vector2(3017, 822)
+speed = 30.0
+right = true
+base_spawn_chance = 0.25
+
+[node name="FlyingRoga" parent="." unique_id=1151917989 instance=ExtResource("4_xcy7o")]
+position = Vector2(4157, 555)
+speed = 15.0
+base_spawn_chance = 1.0
+
+[node name="FlyingRoga2" parent="." unique_id=989675761 instance=ExtResource("4_xcy7o")]
+position = Vector2(5535, 555)
+speed = 15.0
+base_spawn_chance = 1.0
