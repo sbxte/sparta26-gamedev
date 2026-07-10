@@ -39,6 +39,9 @@ var _boost_factor: float = 0.0
 # reads it to spawn the opening segments.
 var difficulty := EventManager.selected_difficulty
 
+func _ready()-> void:
+	AudioManager.play_bgm('res://assets/audio/music/GIRLS_ LEGEND U (FINAL TEST) - 40Nix (I gave up making it myself, don_t forget to put on credits!!)mp3.mp3')
+
 func _physics_process(delta: float) -> void:
 	# Session handles segment movement on the possibility we will need to
 	# halt movement temporarily maybe due to a power up / animation, or for some
