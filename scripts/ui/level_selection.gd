@@ -24,6 +24,7 @@ func _refresh_final_lock(value: float) -> void:
 func _on_medium_pressed() -> void:
 	EventManager.selected_difficulty = Constants.SessionDifficulty.NORMAL
 	EventManager.normal.emit()
+	get_tree().change_scene_to_file("res://scenes/session.tscn")
 
 
 func _on_hard_pressed() -> void:
@@ -39,3 +40,8 @@ func _on_final_pressed() -> void:
 func _on_back_pressed() -> void:
 	AudioManager.play_sfx(click_sfx)
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+
+
+func _on_easy_pressed() -> void:
+	EventManager.selected_difficulty = Constants.SessionDifficulty.EASY
+	EventManager.normal.emit()

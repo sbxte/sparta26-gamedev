@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://3d887x2d8725" path="res://assets/sprite/special week_slide 2.png" id="13_jw3sc"]
 [ext_resource type="Texture2D" uid="uid://y6xbfl711hxv" path="res://assets/sprite/special week_slide 4.png" id="14_dlg3r"]
 [ext_resource type="PackedScene" uid="uid://coa42bwswub8o" path="res://scenes/ui/player_ui.tscn" id="15_jw3sc"]
+[ext_resource type="PackedScene" uid="uid://bkpilw7emftwq" path="res://scenes/ui/pause.tscn" id="16_dlg3r"]
 
 [sub_resource type="Curve" id="Curve_jw3sc"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 0.1), 1.5, 1.0, 0, 0, Vector2(0.8, 0.9), 1.0, 1.5, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -110,31 +111,6 @@ segment_handler = NodePath("Segments")
 speed_curve = SubResource("Curve_jw3sc")
 player_ui = NodePath("PlayerUI")
 
-[node name="UI" type="Control" parent="." unique_id=1869825928]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Speed Display" type="Label" parent="UI" unique_id=28157882]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 5.0
-anchor_top = 1.625
-anchor_right = 8.725
-anchor_bottom = 3.05
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Distance Tracker" type="Label" parent="UI" unique_id=1278464043]
-layout_mode = 0
-anchor_left = 41.025
-anchor_top = 0.425
-anchor_right = 47.65
-anchor_bottom = 2.2
-metadata/_edit_use_anchors_ = true
-
 [node name="Segments" type="Node2D" parent="." unique_id=410255754 node_paths=PackedStringArray("session")]
 script = ExtResource("2_jw3sc")
 session = NodePath("..")
@@ -197,5 +173,16 @@ position = Vector2(576, 580)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=2103668414]
 shape = SubResource("RectangleShape2D_nedwo")
 
-[node name="PlayerUI" parent="." unique_id=1641125104 instance=ExtResource("15_jw3sc")]
-visible = false
+[node name="PlayerUI" parent="." unique_id=1641125104 node_paths=PackedStringArray("pause_node") instance=ExtResource("15_jw3sc")]
+pause_node = NodePath("../Pause")
+
+[node name="Pause" parent="." unique_id=1751295574 instance=ExtResource("16_dlg3r")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = -540.0

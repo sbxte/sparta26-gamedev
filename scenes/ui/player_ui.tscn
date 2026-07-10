@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://b5xgy6itgy6jn" path="res://assets/ui/pause/pause1.png" id="6_0cbkn"]
 [ext_resource type="Texture2D" uid="uid://4kyj43bba5jw" path="res://assets/ui/pause/pause3.png" id="7_wm4y2"]
 [ext_resource type="Texture2D" uid="uid://r6ehujm6wsoy" path="res://assets/ui/pause/pause2.png" id="8_yrfg3"]
-[ext_resource type="PackedScene" uid="uid://bkpilw7emftwq" path="res://scenes/ui/pause.tscn" id="9_llniq"]
 
 [node name="PlayerUI" type="Control" unique_id=1641125104 node_paths=PackedStringArray("HP", "SusBar", "SpeedLabel", "DistanceLabel", "pause_node")]
 layout_mode = 3
@@ -23,7 +22,7 @@ SusBar = NodePath("HBoxContainer2/VBoxContainer/SusBar")
 EmptyHealthPath = "res://assets/ui/level/health2 1.png"
 SpeedLabel = NodePath("HBoxContainer2/HBoxContainer/Speed")
 DistanceLabel = NodePath("HBoxContainer2/HBoxContainer/Distance")
-pause_node = NodePath("Pause")
+pause_node = NodePath("")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1027846778]
 layout_mode = 0
@@ -104,10 +103,5 @@ layout_mode = 2
 texture_normal = ExtResource("6_0cbkn")
 texture_pressed = ExtResource("7_wm4y2")
 texture_hover = ExtResource("8_yrfg3")
-
-[node name="Pause" parent="." unique_id=1751295574 instance=ExtResource("9_llniq")]
-layout_mode = 1
-offset_top = -1080.0
-offset_bottom = -1080.0
 
 [connection signal="pressed" from="PauseContainer/Pause" to="." method="_on_pause_pressed"]
