@@ -20,7 +20,7 @@ shader_parameter/blur = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7n77a"]
 
-[node name="Settings" type="Control" unique_id=341765050 node_paths=PackedStringArray("BGM_progress_bar", "SFX_progress_bar", "back_button")]
+[node name="Settings" type="Control" unique_id=341765050 node_paths=PackedStringArray("BGM_progress_bar", "SFX_progress_bar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +30,6 @@ grow_vertical = 2
 script = ExtResource("1_tl8cu")
 BGM_progress_bar = NodePath("Background/VBoxContainer/HBoxContainer/BGMSlider/TextureProgressBar")
 SFX_progress_bar = NodePath("Background/VBoxContainer/HBoxContainer2/SFXSlider/TextureProgressBar")
-back_button = NodePath("Background/Back")
 
 [node name="BlurPanel" type="Panel" parent="." unique_id=1065700968]
 material = SubResource("ShaderMaterial_byssr")
@@ -189,10 +188,10 @@ texture_progress = ExtResource("8_ofdip")
 
 [node name="Back" type="TextureButton" parent="Background" unique_id=69201208]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 340.0
-offset_right = 600.0
-offset_bottom = 724.0
+offset_left = 382.0
+offset_top = 437.0
+offset_right = 702.0
+offset_bottom = 821.0
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(0, 12)
 texture_normal = ExtResource("4_diibm")

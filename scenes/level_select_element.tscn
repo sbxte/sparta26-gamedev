@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bkk0ar1rewmcx"]
+[gd_scene format=3 uid="uid://da1h5djn5k8q4"]
 
 [ext_resource type="Texture2D" uid="uid://co0actjdr7hx7" path="res://assets/placeholder/level_select_placeholder (1).jpeg" id="1_pa5hp"]
-[ext_resource type="Script" uid="uid://cwq25jwypihys" path="res://scripts/ui/level_select_element.gd" id="2_snbmc"]
+[ext_resource type="Script" path="res://scripts/ui/level_select_element.gd" id="2_snbmc"]
 
 [node name="LevelSelectElement" type="TextureButton" unique_id=241114022]
 offset_right = 40.0
