@@ -13,7 +13,7 @@ var health := 3
 @export var collision_run: CollisionShape2D
 @export var sprite_jump: Sprite2D
 @export var collision_jump: CollisionShape2D
-@export var sprite_slide: Sprite2D
+@export var sprite_slide: AnimatedSprite2D
 @export var collision_slide: CollisionShape2D
 
 var state := PlayerState.RUNNING
