@@ -151,6 +151,7 @@ position = Vector2(-18, -40)
 shape = SubResource("RectangleShape2D_bnxdp")
 
 [node name="Jump" type="AnimatedSprite2D" parent="Player" unique_id=1937579268]
+visible = false
 position = Vector2(-22.999985, 75.29999)
 scale = Vector2(0.481, 0.574)
 sprite_frames = SubResource("SpriteFrames_fmcrr")
@@ -163,6 +164,7 @@ position = Vector2(0, -70)
 shape = SubResource("RectangleShape2D_w6gu6")
 
 [node name="Slide" type="AnimatedSprite2D" parent="Player" unique_id=531511860]
+visible = false
 position = Vector2(-11, -23)
 scale = Vector2(0.38046956, 0.38046956)
 sprite_frames = SubResource("SpriteFrames_hh41f")
@@ -170,6 +172,7 @@ frame = 1
 frame_progress = 0.91409075
 
 [node name="SlideShape" type="CollisionShape2D" parent="Player" unique_id=88708347]
+visible = false
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_eemmi")
 
