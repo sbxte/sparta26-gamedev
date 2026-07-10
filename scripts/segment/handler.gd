@@ -4,13 +4,21 @@ extends Node2D
 @export var session: Session
 
 @export_group("Segments")
-@export var sample_segment: PackedScene
-@export var sample_empty_segment: PackedScene
+@export_file("*.tscn") var itb_segment: String
+@export_file("*.tscn") var unpad_segment: String
+@export_file("*.tscn") var jatos_segment: String
+@export_file("*.tscn") var aa_segment: String
+@export_file("*.tscn") var griya_segment: String
+@export_file("*.tscn") var warteg_segment: String
+@export_file("*.tscn") var filler1_segment: String
+@export_file("*.tscn") var filler2_segment: String
+@export_file("*.tscn") var filler3_segment: String
 
 var last_segment: Segment
+var last_segment_idx := 0
 
 func _ready() -> void:
-	last_segment = sample_empty_segment.instantiate()
+	last_segment = load(itb_segment).instantiate()
 	last_segment.position = Vector2.ZERO
 	last_segment.init_segment(session)
 	add_child(last_segment)
@@ -29,8 +37,19 @@ func _process(_delta: float) -> void:
 		generate_next_segment()
 
 func next_segment_packedscene() -> PackedScene:
-	# TODO: Fill out with markov chain that gamedes will eventually make 
-	return sample_segment
+	last_segment_idx += 1
+
+	# TODO: cross road segments
+	var loop: Array
+	if session.difficulty == Constants.SessionDifficulty.EASY:
+		loop = [itb_segment, filler3_segment, filler1_segment, filler2_segment, jatos_segment, filler3_segment, aa_segment, filler3_segment, griya_segment, filler1_segment, warteg_segment, itb_segment]
+	elif session.difficulty == Constants.SessionDifficulty.NORMAL:
+		loop = [itb_segment, filler3_segment, filler2_segment, filler3_segment, unpad_segment, filler2_segment, filler3_segment, filler2_segment, jatos_segment, filler3_segment, aa_segment, filler3_segment, griya_segment, filler1_segment, warteg_segment, itb_segment]
+	else:
+		loop = [itb_segment, filler3_segment, filler2_segment, filler3_segment, unpad_segment, filler2_segment, filler3_segment, filler2_segment, jatos_segment, filler3_segment, aa_segment, filler3_segment, griya_segment, filler1_segment, warteg_segment, filler2_segment, filler1_segment, itb_segment]
+	
+	last_segment_idx = last_segment_idx % loop.size()
+	return load(loop[last_segment_idx])
 
 func generate_next_segment() -> void:
 	var new_pos := last_segment.position

@@ -8,6 +8,7 @@
 [node name="Filler3Segment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_eyabo")
 segment_length = 5760
+segment_name = "filler3"
 
 [node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
 texture = ExtResource("2_6mxw7")

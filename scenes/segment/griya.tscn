@@ -9,6 +9,7 @@
 [node name="GriyaSegment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_kckyk")
 segment_length = 1920
+segment_name = "griya"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=381491701]
 position = Vector2(280, 10)

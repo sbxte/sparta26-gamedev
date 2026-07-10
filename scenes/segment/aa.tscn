@@ -8,6 +8,7 @@
 [node name="AASegment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_1ymmx")
 segment_length = 1920
+segment_name = "aa"
 
 [node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
 texture = ExtResource("3_jctj5")

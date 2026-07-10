@@ -7,6 +7,7 @@
 [node name="WartegSegment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_cbmjf")
 segment_length = 1920
+segment_name = "warteg"
 
 [node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
 texture = ExtResource("2_8a4mv")

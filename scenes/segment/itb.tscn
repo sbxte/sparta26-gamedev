@@ -8,6 +8,7 @@
 [node name="ITBSegment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_08rjg")
 segment_length = 1920
+segment_name = "itb"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1975032625]
 position = Vector2(240, 0)

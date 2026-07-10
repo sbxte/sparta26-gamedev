@@ -8,6 +8,7 @@
 [node name="JatosSegment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_6a0s7")
 segment_length = 1920
+segment_name = "jatos"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1975032625]
 position = Vector2(173.00002, 47.999996)
