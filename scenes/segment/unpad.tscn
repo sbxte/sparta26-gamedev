@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d2a41wowvkqi1"]
+
+[ext_resource type="Script" uid="uid://h5dvqw45q5pa" path="res://scripts/segment/sample.gd" id="1_2573q"]
+[ext_resource type="Texture2D" uid="uid://d3r7r5mn5tjak" path="res://assets/backgrounds/unpad.png" id="2_2573q"]
+[ext_resource type="PackedScene" uid="uid://ceyogol2mnyqk" path="res://scenes/obstacles/flying_roga.tscn" id="3_5tlt7"]
+[ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="4_h81by"]
+
+[node name="UnpadSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
+script = ExtResource("1_2573q")
+background = NodePath("Background")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1975032625]
+position = Vector2(240, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_2573q")
+centered = false
+
+[node name="FlyingRoga" parent="." unique_id=1864811565 instance=ExtResource("3_5tlt7")]
+position = Vector2(1353, 555)
+
+[node name="Road" type="Sprite2D" parent="." unique_id=35613503]
+texture = ExtResource("4_h81by")
+centered = false
