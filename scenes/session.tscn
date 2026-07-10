@@ -160,7 +160,7 @@ frame_progress = 0.3160439
 
 [node name="JumpShape" type="CollisionShape2D" parent="Player" unique_id=419015850]
 visible = false
-position = Vector2(0, -205)
+position = Vector2(0, -70)
 shape = SubResource("RectangleShape2D_w6gu6")
 
 [node name="Slide" type="AnimatedSprite2D" parent="Player" unique_id=531511860]
@@ -172,8 +172,7 @@ frame = 1
 frame_progress = 0.91409075
 
 [node name="SlideShape" type="CollisionShape2D" parent="Player" unique_id=88708347]
-visible = false
-position = Vector2(0, 55)
+position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_eemmi")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1738941371]

@@ -16,6 +16,7 @@ var health := 3
 @export var collision_slide: CollisionShape2D
 
 var state := Constants.PlayerState.RUNNING
+var _anim_state := -1   # last state we started an animation for; -1 forces the first play
 
 func _physics_process(_delta: float) -> void:
 	if self.is_on_floor() and Input.is_action_pressed("ui_up"):
@@ -43,6 +44,15 @@ func _process(_delta: float) -> void:
 	sprite_run.visible = state == Constants.PlayerState.RUNNING
 	sprite_jump.visible = state == Constants.PlayerState.JUMPING
 	sprite_slide.visible = state == Constants.PlayerState.SLIDING
+
+	# Start the matching animation only when the state changes, so playback isn't
+	# restarted to frame 0 every frame.
+	if state != _anim_state:
+		_anim_state = state
+		match state:
+			Constants.PlayerState.RUNNING: sprite_run.play()
+			Constants.PlayerState.JUMPING: sprite_jump.play()
+			Constants.PlayerState.SLIDING: sprite_slide.play()
 
 
 func hit():

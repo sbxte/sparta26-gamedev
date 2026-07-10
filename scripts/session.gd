@@ -96,8 +96,9 @@ func _physics_process(delta: float) -> void:
 		_end_run()
 		return
 	
-	step += speed * delta
-	segment_handler.move_children(step)
+	var frame_move := speed * delta
+	step += frame_move                        # step accumulates for the distance tracker
+	segment_handler.move_children(frame_move) # world scrolls by this frame's move only
 	player_ui.update_distance(roundi(step))
 	player_ui.update_sus(sus_percentage)
 
