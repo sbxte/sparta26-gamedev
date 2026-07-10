@@ -8,6 +8,7 @@ extends Obstacle
 
 func _ready() -> void:
 	area.monitoring = false
+	sprite.flip_h = right
 	add_to_group("obstacle")
 
 func _physics_process(delta: float) -> void:
