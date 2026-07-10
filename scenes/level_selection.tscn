@@ -1,12 +1,30 @@
 [gd_scene format=3 uid="uid://bbh1nh454x0na"]
 
 [ext_resource type="Script" uid="uid://ctfwr81gxtou3" path="res://scripts/ui/level_selection.gd" id="1_tuscg"]
-[ext_resource type="Texture2D" uid="uid://chwb1gug63hf3" path="res://assets/placeholder/furina_background_placeholder.jpg" id="1_u1g2d"]
-[ext_resource type="PackedScene" uid="uid://bkk0ar1rewmcx" path="res://scenes/level_select_element.tscn" id="2_gswpo"]
-[ext_resource type="Texture2D" uid="uid://diu7l5nxdj6ug" path="res://assets/placeholder/right-arrowplplaceholder.svg" id="4_42rqe"]
-[ext_resource type="Texture2D" uid="uid://btdlcf7lknm6e" path="res://assets/placeholder/furina-removebg-preview.png" id="4_rcujv"]
+[ext_resource type="Texture2D" uid="uid://chpc1r72lu6oc" path="res://assets/ui/commons/skybackground.png" id="2_0oihc"]
+[ext_resource type="Texture2D" uid="uid://dv1ak6ovpa7fo" path="res://assets/ui/commons/sun.png" id="3_74jid"]
+[ext_resource type="Texture2D" uid="uid://bl2mdrj8lw274" path="res://assets/ui/pause/container 1 (1).png" id="4_f5b06"]
+[ext_resource type="FontFile" uid="uid://bt85uuytnuapv" path="res://assets/fonts/Tiny5-Regular.ttf" id="5_4it42"]
+[ext_resource type="Texture2D" uid="uid://ckibbs5yct48h" path="res://assets/ui/level_selector/overall progresa bar 1.png" id="6_lwmgr"]
+[ext_resource type="Texture2D" uid="uid://c7db4jpn1h6eb" path="res://assets/ui/level_selector/overall progress fill 1 (2).png" id="7_nc37p"]
+[ext_resource type="Texture2D" uid="uid://b3xe3rhv18hm2" path="res://assets/ui/level_selector/easy1.png" id="8_7jkdw"]
+[ext_resource type="Texture2D" uid="uid://sawlsb3udevq" path="res://assets/ui/level_selector/easy3.png" id="9_25sbw"]
+[ext_resource type="Texture2D" uid="uid://1arurhcoipua" path="res://assets/ui/level_selector/easy2.png" id="10_mpes7"]
+[ext_resource type="Texture2D" uid="uid://cik31fc1cpop6" path="res://assets/ui/level_selector/medium1.png" id="11_jwxbc"]
+[ext_resource type="Texture2D" uid="uid://c5phn1nnx1c7l" path="res://assets/ui/level_selector/medium3.png" id="12_6mm6k"]
+[ext_resource type="Texture2D" uid="uid://dmxric3ioae1o" path="res://assets/ui/level_selector/medium2.png" id="13_db38f"]
+[ext_resource type="Texture2D" uid="uid://8mua3b6g2q3" path="res://assets/ui/level_selector/hard1.png" id="14_2t0gt"]
+[ext_resource type="Texture2D" uid="uid://dp2vmh4spnfdc" path="res://assets/ui/level_selector/hard3.png" id="15_6rioq"]
+[ext_resource type="Texture2D" uid="uid://64efueq15gny" path="res://assets/ui/level_selector/hard2.png" id="16_4h1w0"]
+[ext_resource type="Texture2D" uid="uid://ci1pcxr4mru8n" path="res://assets/ui/level_selector/final1.png" id="17_25sbw"]
+[ext_resource type="Texture2D" uid="uid://dv0a3720xrsa8" path="res://assets/ui/level_selector/final3.png" id="18_mpes7"]
+[ext_resource type="Texture2D" uid="uid://mogl2d45sgn1" path="res://assets/ui/level_selector/final2.png" id="19_jwxbc"]
+[ext_resource type="Texture2D" uid="uid://bmtin33tr65y2" path="res://assets/ui/level_selector/level locked.png" id="20_6mm6k"]
+[ext_resource type="Texture2D" uid="uid://capwibl4mqul8" path="res://assets/ui/commons/back1.png" id="21_db38f"]
+[ext_resource type="Texture2D" uid="uid://riyy7j4d4tro" path="res://assets/ui/commons/back3.png" id="22_2t0gt"]
+[ext_resource type="Texture2D" uid="uid://dr76l4u5y0ehp" path="res://assets/ui/commons/back2.png" id="23_6rioq"]
 
-[node name="LevelSelection" type="Control" unique_id=1878615944 node_paths=PackedStringArray("next", "back", "camera")]
+[node name="LevelSelection" type="Control" unique_id=1878615944 node_paths=PackedStringArray("ToMainMenu", "Easy", "Medium", "Hard", "FinalLevel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,95 +32,209 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tuscg")
-next = NodePath("Camera2D/Next")
-back = NodePath("Camera2D/Back")
-camera = NodePath("Camera2D")
+ToMainMenu = NodePath("UI/BackContainer/Back")
+Easy = NodePath("UI/HBoxContainer3/Easy")
+Medium = NodePath("UI/HBoxContainer3/Medium")
+Hard = NodePath("UI/HBoxContainer3/Hard")
+FinalLevel = NodePath("UI/FinalContainer/Final")
 metadata/_edit_horizontal_guides_ = [1214.0]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1495895290]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_u1g2d")
-
-[node name="GoalProgBar" type="TextureProgressBar" parent="Background" unique_id=334823575]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
-grow_horizontal = 2
-
-[node name="LevelSelectElement" parent="Background" unique_id=1361947579 instance=ExtResource("2_gswpo")]
-layout_mode = 1
-offset_left = 227.0
-offset_top = 503.0
-offset_right = 227.0
-offset_bottom = 503.0
-rotation = -0.2635447
-
-[node name="LevelSelectElement2" parent="Background" unique_id=1979112597 instance=ExtResource("2_gswpo")]
-layout_mode = 1
-offset_left = 1960.0002
-offset_top = 980.0001
-offset_right = 1960.0
-offset_bottom = 980.0
-rotation = 0.37350047
-
-[node name="FinalRun" type="TextureRect" parent="." unique_id=1312163218]
-layout_mode = 0
-offset_left = 1920.0
-offset_right = 5760.0
-offset_bottom = 2160.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_u1g2d")
-
-[node name="Furina" type="TextureRect" parent="FinalRun" unique_id=1018317677]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -170.0
-offset_right = 170.0
-offset_bottom = 170.0
+offset_left = -1600.0
+offset_top = -900.0
+offset_right = 1600.0
+offset_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_rcujv")
+texture = ExtResource("2_0oihc")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=6790702]
-offset = Vector2(960, 540)
+[node name="Sun" type="TextureRect" parent="." unique_id=1848033378]
+layout_mode = 0
+offset_left = 1578.9999
+offset_top = 17.999998
+offset_right = 4779.0
+offset_bottom = 3218.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_74jid")
 
-[node name="Next" type="TextureButton" parent="Camera2D" unique_id=1034840586]
-offset_left = 1468.0
-offset_top = 322.0
-offset_right = 2268.0
-offset_bottom = 1122.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("4_42rqe")
-texture_pressed = ExtResource("4_42rqe")
-texture_hover = ExtResource("4_42rqe")
+[node name="UI" type="TextureRect" parent="." unique_id=1641904933]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -426.0
+offset_top = -308.5
+offset_right = 426.0
+offset_bottom = 308.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_f5b06")
 
-[node name="Back" type="TextureButton" parent="Camera2D" unique_id=996828116]
-visible = false
-offset_left = 32.0
-offset_top = 326.0
-offset_right = 832.0
-offset_bottom = 1126.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("4_42rqe")
-texture_pressed = ExtResource("4_42rqe")
-texture_hover = ExtResource("4_42rqe")
-flip_h = true
+[node name="VBoxContainer" type="VBoxContainer" parent="UI" unique_id=1365476862]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -275.0
+offset_right = 400.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ToMainMenu" type="TextureButton" parent="Camera2D" unique_id=546465766]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer" unique_id=799169780]
+layout_mode = 2
 
-[connection signal="pressed" from="Camera2D/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="Camera2D/Back" to="." method="_on_back_pressed"]
+[node name="SeshLeft" type="VBoxContainer" parent="UI/VBoxContainer/HBoxContainer" unique_id=2110339546]
+layout_mode = 2
+
+[node name="SessionsLeft" type="RichTextLabel" parent="UI/VBoxContainer/HBoxContainer/SeshLeft" unique_id=1536361531]
+custom_minimum_size = Vector2(243, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_4it42")
+theme_override_font_sizes/normal_font_size = 64
+text = "67"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="RichTextLabel" parent="UI/VBoxContainer/HBoxContainer/SeshLeft" unique_id=527725874]
+custom_minimum_size = Vector2(111, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.6745098, 0.6745098, 0.6862745, 1)
+theme_override_fonts/normal_font = ExtResource("5_4it42")
+theme_override_font_sizes/normal_font_size = 24
+text = "session(s) left"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OverallProgress" type="TextureProgressBar" parent="UI/VBoxContainer/HBoxContainer" unique_id=421421512]
+layout_mode = 2
+texture_under = ExtResource("6_lwmgr")
+texture_progress = ExtResource("7_nc37p")
+texture_progress_offset = Vector2(0, 6)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/VBoxContainer" unique_id=1201789008]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="UI/VBoxContainer/HBoxContainer2" unique_id=609024255]
+custom_minimum_size = Vector2(620, 72)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.2627451, 0.2627451, 0.30980393, 1)
+theme_override_colors/font_outline_color = Color(0.6745098, 0.6745098, 0.6862745, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/normal_font = ExtResource("5_4it42")
+theme_override_font_sizes/normal_font_size = 64
+text = " SELECT YOUR LEVEL!"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/VBoxContainer" unique_id=1286523226]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI" unique_id=1132789650]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -27.0
+offset_right = 3095.0
+offset_bottom = 293.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme_override_constants/separation = 400
+
+[node name="Easy" type="TextureButton" parent="UI/HBoxContainer3" unique_id=512762558]
+layout_mode = 2
+texture_normal = ExtResource("8_7jkdw")
+texture_pressed = ExtResource("9_25sbw")
+texture_hover = ExtResource("10_mpes7")
+
+[node name="Medium" type="TextureButton" parent="UI/HBoxContainer3" unique_id=197092117]
+layout_mode = 2
+texture_normal = ExtResource("11_jwxbc")
+texture_pressed = ExtResource("12_6mm6k")
+texture_hover = ExtResource("13_db38f")
+
+[node name="Hard" type="TextureButton" parent="UI/HBoxContainer3" unique_id=193190311]
+layout_mode = 2
+texture_normal = ExtResource("14_2t0gt")
+texture_pressed = ExtResource("15_6rioq")
+texture_hover = ExtResource("16_4h1w0")
+
+[node name="FinalContainer" type="HBoxContainer" parent="UI" unique_id=1618424118]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 87.5
+offset_right = 791.0
+offset_bottom = 407.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+
+[node name="Final" type="TextureButton" parent="UI/FinalContainer" unique_id=1179723495]
+layout_mode = 2
+texture_normal = ExtResource("17_25sbw")
+texture_pressed = ExtResource("18_mpes7")
+texture_hover = ExtResource("19_jwxbc")
+texture_disabled = ExtResource("20_6mm6k")
+
+[node name="BackContainer" type="HBoxContainer" parent="UI" unique_id=1943124381]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = 177.5
+offset_right = 289.0
+offset_bottom = 561.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+
+[node name="Back" type="TextureButton" parent="UI/BackContainer" unique_id=109583298]
+layout_mode = 2
+texture_normal = ExtResource("21_db38f")
+texture_pressed = ExtResource("22_2t0gt")
+texture_hover = ExtResource("23_6rioq")
+
+[connection signal="pressed" from="UI/HBoxContainer3/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer3/Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer3/Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="UI/FinalContainer/Final" to="." method="_on_final_pressed"]
+[connection signal="pressed" from="UI/BackContainer/Back" to="." method="_on_back_pressed"]
