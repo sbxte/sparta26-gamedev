@@ -10,6 +10,18 @@ signal easy
 signal normal
 signal hard
 signal final
+signal run_completed
+signal run_invalid
+signal trigger_ending_2 #akumulasi tdk sampai 65km
+signal trigger_ending_3 #bro failed the final test lol
+signal unlock_final_test
+signal force_final_test
+
+#idk where to put these, gemini said put these on global 
+var total_km: float = 0.0
+var current_session: int = 1
+const max_sessions: int = 20
+const target_total: float = 65.0
 
 # Persists the level-select choice across the scene change into the session.
 # The signals still fire for immediate UI/SFX reactions; this holds the value

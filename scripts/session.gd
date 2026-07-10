@@ -91,9 +91,39 @@ func _process(_delta: float) -> void:
 	
 
 func _end_run() -> void:
+	if not is_running:
+		return
+		
 	is_running = false
 	is_boosting = false
+	
+	#convert step to km
+	var session_km := step / 6767.0
+	
+	# 2,4 km or not?
+	if step >= 2400.0:
+		EventManager.total_km += session_km
+		EventManager.run_completed.emit()
+	else:
+		EventManager.run_invalid.emit()
+		
+	# for triggering the end
+	var is_max_session_passed = EventManager.current_session > EventManager.max_sessions
+	var is_quota_met = EventManager.total_km >= EventManager.target_total
+
+	if is_max_session_passed and not is_quota_met:
+		EventManager.trigger_ending_2.emit()
+	else:
+		if is_quota_met:
+			EventManager.unlock_final_test.emit()
+			if is_max_session_passed: #kalo udah 20 session bakal force final test
+				EventManager.force_final_test.emit()
+		
+		# next session
+		EventManager.current_session += 1
+
 	EventManager.end_sesh.emit()
+	get_tree().change_scene_to_file("res://scenes/ui/results.tscn")
 
 func init_session(_difficulty: int) -> void:
 	# TODO: difficulty param is just a placeholder. The point is to accept difficulty information from level selection menu and adjust the session accordingly.
