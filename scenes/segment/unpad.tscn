@@ -7,7 +7,7 @@
 
 [node name="UnpadSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
 script = ExtResource("1_2573q")
-background = NodePath("Background")
+background = NodePath("Road")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1975032625]
 position = Vector2(240, 0)
