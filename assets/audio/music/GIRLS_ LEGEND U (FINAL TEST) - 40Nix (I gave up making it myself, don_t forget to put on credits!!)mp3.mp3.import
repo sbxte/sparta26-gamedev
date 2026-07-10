@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8vhkxcb74t1m"
+path="res://.godot/imported/GIRLS_ LEGEND U (FINAL TEST) - 40Nix (I gave up making it myself, don_t forget to put on credits!!)mp3.mp3-146c78e0de44be88eee8d20403cafdaa.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/GIRLS_ LEGEND U (FINAL TEST) - 40Nix (I gave up making it myself, don_t forget to put on credits!!)mp3.mp3"
+dest_files=["res://.godot/imported/GIRLS_ LEGEND U (FINAL TEST) - 40Nix (I gave up making it myself, don_t forget to put on credits!!)mp3.mp3-146c78e0de44be88eee8d20403cafdaa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnp75x5s85fsj"
+path="res://.godot/imported/Suspicious bar (myabe_).mp3-cb611f2736965c641b58830b667693d7.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/misc/Suspicious bar (myabe_).mp3"
+dest_files=["res://.godot/imported/Suspicious bar (myabe_).mp3-cb611f2736965c641b58830b667693d7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
