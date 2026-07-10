@@ -21,24 +21,6 @@ func _ready() -> void:
 func _refresh_final_lock(value: float) -> void:
 	FinalLevel.disabled = value < progress.max_value
 
-func _on_easy_pressed() -> void:
-	AudioManager.play_sfx(click_sfx)
-
-
-func _on_medium_pressed() -> void:
-	AudioManager.play_sfx(click_sfx)
-
-
-func _on_hard_pressed() -> void:
-	AudioManager.play_sfx(click_sfx)
-
-
-func _on_final_pressed() -> void:
-	AudioManager.play_sfx(click_sfx)
-	EventManager.selected_difficulty = Constants.SessionDifficulty.EASY
-	EventManager.easy.emit()
-
-
 func _on_medium_pressed() -> void:
 	EventManager.selected_difficulty = Constants.SessionDifficulty.NORMAL
 	EventManager.normal.emit()
@@ -50,7 +32,6 @@ func _on_hard_pressed() -> void:
 
 
 func _on_final_pressed() -> void:
-	# No dedicated FINAL tier yet — use the hardest spawn rate for now.
 	EventManager.selected_difficulty = Constants.SessionDifficulty.FINAL
 	EventManager.final.emit()
 
