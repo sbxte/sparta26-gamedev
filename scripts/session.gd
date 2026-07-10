@@ -49,6 +49,8 @@ func _physics_process(delta: float) -> void:
 		is_boosting = false
 		_boost_factor = 0.0
 		segment_handler.move_children(speed * delta) # Force stops, even if boosting
+		await get_tree().create_timer(2).timeout
+		is_running = true
 		return
 	
 	# Base Speed
