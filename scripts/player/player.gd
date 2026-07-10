@@ -1,12 +1,12 @@
 class_name Player
 extends CharacterBody2D
-
+signal player_died
 enum PlayerState { RUNNING, JUMPING, SLIDING }
 
 @export_group("Movement")
 @export var gravity := 2000.0
 @export var jump_vel := 1000.0
-
+var health := 3
 # This does not look elegant at all
 @export_group("States")
 @export var sprite_run: Sprite2D
@@ -39,3 +39,10 @@ func _process(_delta: float) -> void:
 	sprite_run.visible = state == PlayerState.RUNNING
 	sprite_jump.visible = state == PlayerState.JUMPING
 	sprite_slide.visible = state == PlayerState.SLIDING
+
+
+func hit():
+	health = health-1
+	if health == 0:
+		get_tree().change_scene_to_file("res://scenes/ui/results.tscn")
+	
