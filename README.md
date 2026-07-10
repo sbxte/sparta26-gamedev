@@ -69,5 +69,6 @@ https://rafeb.itch.io/latman-death
 Screenshot Gameplay
 <img width="959" height="539" alt="Screenshot 2026-07-10 232411" src="https://github.com/user-attachments/assets/c434db27-3204-40be-96ae-c642ba68507d" />
 <img width="959" height="539" alt="Screenshot 2026-07-10 232419" src="https://github.com/user-attachments/assets/ae04e24e-b32f-46db-872c-6771f949aa3d" />
-<img width="194" height="178" alt="image" src="https://github.com/user-attachments/assets/019c950c-60e8-4a79-aa81-eafbbd99c015" />
+<img width="959" height="539" alt="Screenshot 2026-07-10 234257" src="https://github.com/user-attachments/assets/760e8793-f1af-42f4-9311-0702f2ebdbcc" />
+
 
