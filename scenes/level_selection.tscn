@@ -37,6 +37,7 @@ Easy = NodePath("UI/HBoxContainer3/Easy")
 Medium = NodePath("UI/HBoxContainer3/Medium")
 Hard = NodePath("UI/HBoxContainer3/Hard")
 FinalLevel = NodePath("UI/FinalContainer/Final")
+click_sfx = "res://assets/audio/sfx/CLICK.wav"
 metadata/_edit_horizontal_guides_ = [1214.0]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1495895290]

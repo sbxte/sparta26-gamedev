@@ -3,20 +3,22 @@ extends Node
 @export var button_array: Array[TextureButton]
 # resume = 0, settings = 1, levelselect = 2
 @export var settings: Node
+@export var click_sfx: String
 
 var paused: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	paused = true
+	paused = false
 	for i in range(len(button_array)):
 		button_array[i].pressed.connect(_on_button_pressed.bind(i))
 
 func _on_button_pressed(idx: int) -> void:
+	AudioManager.play_sfx(click_sfx)
 	match idx:
 		0: paused = false; handle_pause()
 		1: UiAnimManager.moveDownAnim(settings, Vector2.ZERO, 0.3)
-		2: get_tree().change_scene_to_file("res://scenes/level_selection.tscn")
+		2: get_tree().paused = false; get_tree().change_scene_to_file("res://scenes/level_selection.tscn")
 
 func handle_pause() -> void:
 	get_tree().paused = paused

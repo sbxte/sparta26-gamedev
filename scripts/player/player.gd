@@ -48,6 +48,7 @@ func _process(_delta: float) -> void:
 
 func hit():
 	health = health-1
+	EventManager.emit_signal("player_hit", health)
 	if health == 0:
 		get_tree().change_scene_to_file("res://scenes/ui/results.tscn")
 	

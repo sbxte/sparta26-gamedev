@@ -30,6 +30,7 @@ grow_vertical = 2
 script = ExtResource("1_tl8cu")
 BGM_progress_bar = NodePath("Background/VBoxContainer/HBoxContainer/BGMSlider/TextureProgressBar")
 SFX_progress_bar = NodePath("Background/VBoxContainer/HBoxContainer2/SFXSlider/TextureProgressBar")
+click_sfx = "res://assets/audio/sfx/CLICK.wav"
 
 [node name="BlurPanel" type="Panel" parent="." unique_id=1065700968]
 material = SubResource("ShaderMaterial_byssr")
