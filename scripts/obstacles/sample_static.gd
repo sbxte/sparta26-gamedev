@@ -12,3 +12,4 @@ func _ready() -> void:
 
 	sprite.visible = spawned
 	area.monitorable = spawned
+	add_to_group("obstacle")
