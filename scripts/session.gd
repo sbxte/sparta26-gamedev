@@ -35,6 +35,9 @@ var running_time: float
 var step: float = 0.0
 var _boost_factor: float = 0.0
 
+# TODO: update this value on difficulty selection screen
+var difficulty := Constants.SessionDifficulty.NORMAL
+
 func _physics_process(delta: float) -> void:
 	# Session handles segment movement on the possibility we will need to
 	# halt movement temporarily maybe due to a power up / animation, or for some
