@@ -22,20 +22,33 @@ func _refresh_final_lock(value: float) -> void:
 	FinalLevel.disabled = value < progress.max_value
 
 func _on_medium_pressed() -> void:
+	AudioManager.play_sfx(click_sfx)
 	EventManager.selected_difficulty = Constants.SessionDifficulty.NORMAL
 	EventManager.normal.emit()
+	get_tree().change_scene_to_file("res://scenes/session.tscn")
 
 
 func _on_hard_pressed() -> void:
+	AudioManager.play_sfx(click_sfx)
 	EventManager.selected_difficulty = Constants.SessionDifficulty.HARD
 	EventManager.hard.emit()
+	get_tree().change_scene_to_file("res://scenes/session.tscn")
 
 
 func _on_final_pressed() -> void:
+	AudioManager.play_sfx(click_sfx)
 	EventManager.selected_difficulty = Constants.SessionDifficulty.FINAL
 	EventManager.final.emit()
+	get_tree().change_scene_to_file("res://scenes/session.tscn")
 
 
 func _on_back_pressed() -> void:
 	AudioManager.play_sfx(click_sfx)
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+
+
+func _on_easy_pressed() -> void:
+	AudioManager.play_sfx(click_sfx)
+	EventManager.selected_difficulty = Constants.SessionDifficulty.EASY
+	EventManager.normal.emit()
+	get_tree().change_scene_to_file("res://scenes/session.tscn")

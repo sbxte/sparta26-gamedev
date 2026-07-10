@@ -43,10 +43,13 @@ var difficulty := EventManager.selected_difficulty
 func _ready() -> void:
 	# Dying (health hits 0) ends the run as a forced loss, no distance credit.
 	EventManager.player_hit.connect(_on_player_hit)
+	AudioManager.play_bgm('res://assets/audio/music/GIRLS_ LEGEND U (FINAL TEST) - 40Nix (I gave up making it myself, don_t forget to put on credits!!)mp3.mp3')
 
 func _on_player_hit(health: int) -> void:
 	if health == 0:
 		_end_run(true)
+
+
 
 func _physics_process(delta: float) -> void:
 	# Session handles segment movement on the possibility we will need to
@@ -58,6 +61,8 @@ func _physics_process(delta: float) -> void:
 		is_boosting = false
 		_boost_factor = 0.0
 		segment_handler.move_children(speed * delta) # Force stops, even if boosting
+		await get_tree().create_timer(2).timeout
+		is_running = true
 		return
 
 	elapsed += delta

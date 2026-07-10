@@ -22,7 +22,7 @@ shader_parameter/blur = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw24t"]
 
-[node name="MainMenu" type="Control" unique_id=1570175146 node_paths=PackedStringArray("settings")]
+[node name="MainMenu" type="Control" unique_id=1570175146 node_paths=PackedStringArray("button_array", "settings")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,6 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_btxxm")
+button_array = [NodePath("VBoxContainer/Play"), NodePath("VBoxContainer/Settings"), NodePath("VBoxContainer/Quit")]
 settings = NodePath("Settings")
 BGMPath = "res://assets/audio/music/Summer Sunday (Main Menu) -  celestialghost8.wav"
 ClickSound = "res://assets/audio/sfx/CLICK.wav"

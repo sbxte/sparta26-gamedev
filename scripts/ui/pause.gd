@@ -17,13 +17,13 @@ func _on_button_pressed(idx: int) -> void:
 	AudioManager.play_sfx(click_sfx)
 	match idx:
 		0: paused = false; handle_pause()
-		1: UiAnimManager.moveDownAnim(settings, Vector2.ZERO, 0.3)
+		1: UiAnimManager.moveDownAnim(settings, Vector2(0, 0), 0.3)
 		2: get_tree().paused = false; get_tree().change_scene_to_file("res://scenes/level_selection.tscn")
 
 func handle_pause() -> void:
 	get_tree().paused = paused
 	if paused:
-		UiAnimManager.moveDownAnim(self, Vector2.ZERO, 0.3)
+		UiAnimManager.moveDownAnim(self, Vector2(self.position.x, 540), 0.3)
 	else:
-		UiAnimManager.moveUpAnim(self, Vector2(0, -1080), 0.3)
+		UiAnimManager.moveUpAnim(self, Vector2(self.position.x, -540), 0.3)
 	await get_tree().create_timer(0.5).timeout # debounce asddsdd
