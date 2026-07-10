@@ -66,5 +66,7 @@ QUALITY ASSURANCE
 ## Link Halaman Itch io
 https://rafeb.itch.io/latman-death
 
-Screenshot Gameplay (3 min)
-+ GIF or video gameplay (optional)
+Screenshot Gameplay
+<img width="959" height="539" alt="Screenshot 2026-07-10 232411" src="https://github.com/user-attachments/assets/c434db27-3204-40be-96ae-c642ba68507d" />
+<img width="959" height="539" alt="Screenshot 2026-07-10 232419" src="https://github.com/user-attachments/assets/ae04e24e-b32f-46db-872c-6771f949aa3d" />
+<img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/992ba58a-3227-4d43-93c6-896e0b9451c5" />
