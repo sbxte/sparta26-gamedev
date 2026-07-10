@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://ciplpytokmng1"
 UiAnimManager="*uid://caujplngf2b8i"
 EventManager="*uid://cp3sngqcypj3d"
 AudioManager="*uid://bq6ygmbm4yotd"
+Global="*uid://c3frl0gbikwql"
 
 [display]
 

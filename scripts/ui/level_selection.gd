@@ -11,8 +11,14 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Final level stays locked until the 65 km bar is full.
-	FinalLevel.disabled = progress.value < progress.max_value
+	# Final level stays locked until the 65 km bar is full — re-checked live in
+	# case the bar fills while this screen is open.
+	progress.value_changed.connect(_refresh_final_lock)
+	_refresh_final_lock(progress.value)
+
+
+func _refresh_final_lock(value: float) -> void:
+	FinalLevel.disabled = value < progress.max_value
 
 
 func _on_easy_pressed() -> void:
