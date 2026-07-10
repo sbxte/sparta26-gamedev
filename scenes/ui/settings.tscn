@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://b3i67nh88f80g"]
 
-[ext_resource type="Shader" uid="uid://ckpgn4jonq0b0" path="res://scenes/ui/blur_shader.gdshader" id="1_8wfqe"]
-[ext_resource type="Script" uid="uid://guunalui2vy2" path="res://scripts/ui/settings.gd" id="1_h175o"]
-[ext_resource type="Texture2D" uid="uid://chwb1gug63hf3" path="res://assets/placeholder/furina_background_placeholder.jpg" id="3_ptynm"]
-[ext_resource type="Texture2D" uid="uid://c240qjuhrtw6s" path="res://assets/placeholder/WhatsApp Image 2026-07-06 at 7.36.41 PM.jpeg" id="4_ptynm"]
+[ext_resource type="Script" uid="uid://guunalui2vy2" path="res://scripts/ui/settings.gd" id="1_tl8cu"]
+[ext_resource type="Shader" uid="uid://ckpgn4jonq0b0" path="res://scenes/ui/blur_shader.gdshader" id="2_4ff33"]
+[ext_resource type="FontFile" uid="uid://bt85uuytnuapv" path="res://assets/fonts/Tiny5-Regular.ttf" id="2_mn4ci"]
+[ext_resource type="Texture2D" uid="uid://bp5qd14flpacx" path="res://assets/ui/settings/container 1.png" id="3_2vpyc"]
+[ext_resource type="Texture2D" uid="uid://capwibl4mqul8" path="res://assets/ui/commons/back1.png" id="4_diibm"]
+[ext_resource type="Texture2D" uid="uid://riyy7j4d4tro" path="res://assets/ui/commons/back3.png" id="5_v4xnf"]
+[ext_resource type="Texture2D" uid="uid://dr76l4u5y0ehp" path="res://assets/ui/commons/back2.png" id="6_3650c"]
+[ext_resource type="Texture2D" uid="uid://bgdf0wpxx3esq" path="res://assets/ui/settings/grabber.png" id="7_d4m38"]
+[ext_resource type="Texture2D" uid="uid://boj4rmxyvh6rh" path="res://assets/ui/settings/fill.png" id="7_n58ha"]
+[ext_resource type="Texture2D" uid="uid://cb5owotgeg5k" path="res://assets/ui/settings/slider.png" id="8_mn4ci"]
+[ext_resource type="Texture2D" uid="uid://bqmb60y08p1fp" path="res://assets/ui/settings/fill-1.png" id="8_ofdip"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_byssr"]
-shader = ExtResource("1_8wfqe")
+shader = ExtResource("2_4ff33")
 shader_parameter/blur = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n77a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7n77a"]
 
 [node name="Settings" type="Control" unique_id=341765050 node_paths=PackedStringArray("BGM_progress_bar", "SFX_progress_bar", "back_button")]
 layout_mode = 3
@@ -18,10 +27,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h175o")
-BGM_progress_bar = NodePath("HBoxContainer/BGMSlider/BGM")
-SFX_progress_bar = NodePath("HBoxContainer/SFXSlider/SFX")
-back_button = NodePath("Back")
+script = ExtResource("1_tl8cu")
+BGM_progress_bar = NodePath("Background/VBoxContainer/HBoxContainer/BGMSlider/TextureProgressBar")
+SFX_progress_bar = NodePath("Background/VBoxContainer/HBoxContainer2/SFXSlider/TextureProgressBar")
+back_button = NodePath("Background/Back")
 
 [node name="BlurPanel" type="Panel" parent="." unique_id=1065700968]
 material = SubResource("ShaderMaterial_byssr")
@@ -32,62 +41,164 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7n77a")
 
 [node name="Background" type="TextureRect" parent="." unique_id=515950266]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_ptynm")
-
-[node name="Back" type="TextureButton" parent="." unique_id=69201208]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -731.0
-offset_bottom = 489.0
-grow_horizontal = 0
-texture_normal = ExtResource("4_ptynm")
-texture_pressed = ExtResource("4_ptynm")
-texture_hover = ExtResource("4_ptynm")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=444410546]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -500.0
-offset_right = 500.0
-offset_bottom = 500.0
+offset_left = -426.0
+offset_top = -318.0
+offset_right = 426.0
+offset_bottom = 318.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_2vpyc")
 
-[node name="BGMSlider" type="VSlider" parent="HBoxContainer" unique_id=177071013]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background" unique_id=435473726]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -442.0
+offset_top = 44.0
+offset_right = 442.0
+offset_bottom = 244.0
+grow_horizontal = 2
+
+[node name="Title" type="RichTextLabel" parent="Background/VBoxContainer" unique_id=624740411]
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
-value = 50.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.2627451, 0.2627451, 0.30980393, 1)
+theme_override_colors/font_outline_color = Color(0.6745098, 0.6745098, 0.6862745, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/normal_font = ExtResource("2_mn4ci")
+theme_override_font_sizes/normal_font_size = 86
+text = " SETTINGS"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
 
-[node name="BGM" type="TextureProgressBar" parent="HBoxContainer/BGMSlider" unique_id=1736281077]
-layout_mode = 0
-offset_left = -10.0
-offset_right = -9.0
-offset_bottom = 40.0
-value = 50.0
-fill_mode = 3
-
-[node name="SFXSlider" type="VSlider" parent="HBoxContainer" unique_id=1099447705]
+[node name="Padding" type="RichTextLabel" parent="Background/VBoxContainer" unique_id=972858668]
+custom_minimum_size = Vector2(0, 51)
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer" unique_id=244966573]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/VBoxContainer/HBoxContainer" unique_id=499521747]
+custom_minimum_size = Vector2(238, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0.2627451, 0.2627451, 0.30980393, 1)
+theme_override_colors/font_outline_color = Color(0.6745098, 0.6745098, 0.6862745, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/normal_font = ExtResource("2_mn4ci")
+theme_override_font_sizes/normal_font_size = 64
+text = " BGM"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="BGMSlider" type="HSlider" parent="Background/VBoxContainer/HBoxContainer" unique_id=1113863280]
+z_index = 1
+custom_minimum_size = Vector2(434, 0)
+layout_mode = 2
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+theme_override_constants/tick_offset = 0
+theme_override_icons/grabber = ExtResource("7_d4m38")
+theme_override_icons/grabber_highlight = ExtResource("7_d4m38")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_7n77a")
 value = 50.0
 
-[node name="SFX" type="TextureProgressBar" parent="HBoxContainer/SFXSlider" unique_id=1808900108]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Background/VBoxContainer/HBoxContainer/BGMSlider" unique_id=1701187173]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -43.5
+offset_right = 241.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+texture_under = ExtResource("8_mn4ci")
+texture_progress = ExtResource("7_n58ha")
+
+[node name="Padding2" type="RichTextLabel" parent="Background/VBoxContainer" unique_id=1628486289]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Background/VBoxContainer" unique_id=1327643819]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/VBoxContainer/HBoxContainer2" unique_id=489478400]
+custom_minimum_size = Vector2(238, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0.2627451, 0.2627451, 0.30980393, 1)
+theme_override_colors/font_outline_color = Color(0.6745098, 0.6745098, 0.6862745, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/normal_font = ExtResource("2_mn4ci")
+theme_override_font_sizes/normal_font_size = 64
+text = " SFX
+"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="Background/VBoxContainer/HBoxContainer2" unique_id=1034574205]
+z_index = 1
+custom_minimum_size = Vector2(434, 0)
+layout_mode = 2
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+theme_override_constants/tick_offset = 0
+theme_override_icons/grabber = ExtResource("7_d4m38")
+theme_override_icons/grabber_highlight = ExtResource("7_d4m38")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_7n77a")
+value = 50.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Background/VBoxContainer/HBoxContainer2/SFXSlider" unique_id=1717541124]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -43.5
+offset_right = 241.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+texture_under = ExtResource("8_mn4ci")
+texture_progress = ExtResource("8_ofdip")
+
+[node name="Back" type="TextureButton" parent="Background" unique_id=69201208]
 layout_mode = 0
-offset_left = -25.0
-offset_right = -24.0
-offset_bottom = 40.0
-value = 50.0
-fill_mode = 3
+offset_left = 280.0
+offset_top = 340.0
+offset_right = 600.0
+offset_bottom = 724.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(0, 12)
+texture_normal = ExtResource("4_diibm")
+texture_pressed = ExtResource("5_v4xnf")
+texture_hover = ExtResource("6_3650c")
 
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="value_changed" from="HBoxContainer/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
-[connection signal="value_changed" from="HBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Background/VBoxContainer/HBoxContainer/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="value_changed" from="Background/VBoxContainer/HBoxContainer2/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Background/Back" to="." method="_on_back_pressed"]
