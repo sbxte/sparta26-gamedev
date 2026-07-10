@@ -29,6 +29,11 @@ func _physics_process(_delta: float) -> void:
 	# TODO: Implement sliding... how does that affect the player when they're in the jumping state actually??
 	self.velocity.y += gravity * _delta
 	self.move_and_slide()
+	var collision = get_last_slide_collision()
+	if collision:
+		var collider = collision.get_collider()
+		if collider.is_in_group("obstacle"):
+			hit()
 
 	collision_run.disabled = state != PlayerState.RUNNING
 	collision_jump.disabled = state != PlayerState.JUMPING
