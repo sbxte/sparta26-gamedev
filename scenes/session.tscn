@@ -168,7 +168,7 @@ position = Vector2(0, 55)
 shape = SubResource("RectangleShape2D_eemmi")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1738941371]
-position = Vector2(576, 580)
+position = Vector2(576, 1000)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=2103668414]
 shape = SubResource("RectangleShape2D_nedwo")
