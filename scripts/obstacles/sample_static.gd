@@ -14,4 +14,3 @@ func setup(_ses: Session, chance: float) -> void:
 
 	sprite.visible = spawned
 	area.monitorable = spawned
-
