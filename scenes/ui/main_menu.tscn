@@ -30,9 +30,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_btxxm")
+settings = NodePath("Settings")
 BGMPath = "res://assets/audio/music/Summer Sunday (Main Menu) -  celestialghost8.wav"
 ClickSound = "res://assets/audio/sfx/CLICK.wav"
-settings = NodePath("Settings")
 
 [node name="Blur" type="TextureRect" parent="." unique_id=495443876]
 layout_mode = 0
