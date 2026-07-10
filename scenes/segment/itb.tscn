@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ceyogol2mnyqk" path="res://scenes/obstacles/flying_roga.tscn" id="3_jqnc1"]
 [ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="4_ot5hp"]
 
-[node name="ITBSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
+[node name="ITBSegment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_08rjg")
-background = NodePath("Road")
+segment_length = 1920
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1975032625]
 position = Vector2(240, 0)

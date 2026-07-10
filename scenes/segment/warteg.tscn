@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="2_8a4mv"]
 [ext_resource type="PackedScene" uid="uid://cug1c72jtgr8j" path="res://scenes/obstacles/car.tscn" id="3_8elus"]
 
-[node name="WartegSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
+[node name="WartegSegment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_cbmjf")
-background = NodePath("Road")
+segment_length = 1920
 
 [node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
 texture = ExtResource("2_8a4mv")
