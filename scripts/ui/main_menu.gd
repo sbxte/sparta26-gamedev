@@ -10,7 +10,6 @@ extends Node
 func _ready() -> void:
 	AudioManager.play_bgm(BGMPath)
 	for i in range(len(button_array)):
-		button_array[i].pivot_offset = button_array[i].size / 2
 		button_array[i].pressed.connect(_on_button_pressed.bind(i))
 
 func _on_button_pressed(idx: int) -> void:

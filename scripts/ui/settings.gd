@@ -2,6 +2,7 @@ extends Node
 
 @export var BGM_progress_bar: TextureProgressBar
 @export var SFX_progress_bar: TextureProgressBar
+@export var click_sfx: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,4 +18,5 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioManager.sfx_volume = value / 100.0
 
 func _on_back_pressed() -> void:
+	AudioManager.play_sfx(click_sfx)
 	UiAnimManager.moveUpAnim(self, Vector2(0, -1080), 0.3)
