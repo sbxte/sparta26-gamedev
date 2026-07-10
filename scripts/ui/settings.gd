@@ -15,5 +15,4 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	SFX_progress_bar.value = value
 
 func _on_back_pressed() -> void:
-	UiAnimManager.clickAnim(back_button, Vector2(0.9, 0.9), Vector2.ONE, 0.05)
 	UiAnimManager.moveUpAnim(self, Vector2(0, -1080), 0.3)

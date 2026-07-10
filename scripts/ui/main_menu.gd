@@ -18,7 +18,6 @@ func _ready() -> void:
 		button_array[i].pressed.connect(_on_button_pressed.bind(i))
 
 func _on_button_pressed(idx: int) -> void:
-	UiAnimManager.clickAnim(button_array[idx], Vector2(0.9, 0.9), Vector2.ONE, 0.05)
 	match idx:
 		0: get_tree().change_scene_to_file("res://scenes/level_selection.tscn")
 		1: UiAnimManager.moveDownAnim(settings, Vector2.ZERO, 0.3)
