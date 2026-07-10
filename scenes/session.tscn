@@ -120,7 +120,6 @@ collision_jump = NodePath("JumpShape")
 collision_slide = NodePath("SlideShape")
 
 [node name="Run" type="AnimatedSprite2D" parent="Player" unique_id=360331976]
-visible = false
 position = Vector2(6.2500014, -75.75)
 scale = Vector2(0.4810606, 0.5738889)
 sprite_frames = SubResource("SpriteFrames_eemmi")
@@ -128,7 +127,6 @@ frame = 3
 frame_progress = 0.5319367
 
 [node name="RunShape" type="CollisionShape2D" parent="Player" unique_id=2117522734]
-visible = false
 position = Vector2(2, -55)
 shape = SubResource("RectangleShape2D_bnxdp")
 
@@ -144,16 +142,14 @@ position = Vector2(0, -205)
 shape = SubResource("RectangleShape2D_w6gu6")
 
 [node name="Slide" type="AnimatedSprite2D" parent="Player" unique_id=531511860]
-visible = false
-position = Vector2(6.25, -75.75)
+position = Vector2(6.25, 14)
 scale = Vector2(0.519697, 0.48277774)
 sprite_frames = SubResource("SpriteFrames_hh41f")
 frame = 1
 frame_progress = 0.91409075
 
 [node name="SlideShape" type="CollisionShape2D" parent="Player" unique_id=88708347]
-visible = false
-position = Vector2(0, -40)
+position = Vector2(0, 55)
 shape = SubResource("RectangleShape2D_eemmi")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1738941371]
@@ -163,3 +159,4 @@ position = Vector2(576, 580)
 shape = SubResource("RectangleShape2D_nedwo")
 
 [node name="PlayerUI" parent="." unique_id=1641125104 instance=ExtResource("15_jw3sc")]
+visible = false

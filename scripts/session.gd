@@ -9,7 +9,7 @@ extends Node2D
 @export var max_speed: float = 200.0
 
 @export_category("Player UI")
-@export var player_ui: Node
+@export var player_ui: PlayerUI
 
 @export_category("Boost")
 @export var boost_amount: float
@@ -34,14 +34,6 @@ var running_time: float
 var step: float = 0.0
 var _boost_factor: float = 0.0
 
-var distance_tracker: RichTextLabel
-var speed_label: RichTextLabel
-var sus_bar: TextureProgressBar
-
-func _ready() -> void:
-	distance_tracker = player_ui.DistanceLabel
-	speed_label = player_ui.SpeedLabel
-	sus_bar = player_ui.SusBar
 # Set from the level-select choice, persisted on the EventManager autoload.
 # Member init runs before any _ready, so this is set before SegmentHandler._ready
 # reads it to spawn the opening segments.
@@ -90,12 +82,12 @@ func _physics_process(delta: float) -> void:
 	
 	step += speed * delta
 	segment_handler.move_children(step)
-	distance_tracker.text = "%d m/2400 m" % roundi(step)
-	sus_bar.value = sus_percentage
+	player_ui.update_distance(roundi(step))
+	player_ui.update_sus(sus_percentage)
 
 func _process(_delta: float) -> void:
 	if is_running:
-		speed_label.text = "%d km/h" % roundi(speed * units_to_kmh)
+		player_ui.update_speed(roundi(speed * units_to_kmh))
 	
 
 func _end_run() -> void:
