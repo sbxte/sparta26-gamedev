@@ -9,7 +9,7 @@ enum PlayerState { RUNNING, JUMPING, SLIDING }
 var health := 3
 # This does not look elegant at all
 @export_group("States")
-@export var sprite_run: Sprite2D
+@export var sprite_run: AnimatedSprite2D
 @export var collision_run: CollisionShape2D
 @export var sprite_jump: Sprite2D
 @export var collision_jump: CollisionShape2D
