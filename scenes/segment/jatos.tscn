@@ -2,16 +2,35 @@
 
 [ext_resource type="Script" uid="uid://h5dvqw45q5pa" path="res://scripts/segment/sample.gd" id="1_6a0s7"]
 [ext_resource type="Texture2D" uid="uid://cnkwmp34ncmbk" path="res://assets/backgrounds/jatos.png" id="2_6a0s7"]
-[ext_resource type="PackedScene" uid="uid://ceyogol2mnyqk" path="res://scenes/obstacles/flying_roga.tscn" id="3_hq2ot"]
+[ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="4_gxyny"]
+[ext_resource type="PackedScene" uid="uid://cug1c72jtgr8j" path="res://scenes/obstacles/car.tscn" id="4_hq2ot"]
 
 [node name="JatosSegment" type="Node2D" unique_id=1160094697 node_paths=PackedStringArray("background")]
 script = ExtResource("1_6a0s7")
-background = NodePath("Background")
+background = NodePath("Road")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1975032625]
-position = Vector2(-4, 0)
+position = Vector2(173.00002, 47.999996)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_6a0s7")
 centered = false
 
-[node name="FlyingRoga" parent="." unique_id=1864811565 instance=ExtResource("3_hq2ot")]
-position = Vector2(1353, 555)
+[node name="Road" type="Sprite2D" parent="." unique_id=1182005449]
+texture = ExtResource("4_gxyny")
+centered = false
+
+[node name="Car1" parent="." unique_id=1864811565 instance=ExtResource("4_hq2ot")]
+position = Vector2(195, 828)
+speed = 0.0
+base_spawn_chance = 0.7
+
+[node name="Car2" parent="." unique_id=2049205934 instance=ExtResource("4_hq2ot")]
+position = Vector2(759, 819)
+speed = 20.0
+right = true
+base_spawn_chance = 0.25
+
+[node name="Car3" parent="." unique_id=723088749 instance=ExtResource("4_hq2ot")]
+position = Vector2(1653, 828)
+speed = 0.0
+base_spawn_chance = 1.0
