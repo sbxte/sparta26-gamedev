@@ -29,11 +29,7 @@ func _physics_process(_delta: float) -> void:
 	# TODO: Implement sliding... how does that affect the player when they're in the jumping state actually??
 	self.velocity.y += gravity * _delta
 	self.move_and_slide()
-	var collision = get_last_slide_collision()
-	if collision:
-		var collider = collision.get_collider()
-		if collider.is_in_group("obstacle"):
-			hit()
+	
 
 	collision_run.disabled = state != Constants.PlayerState.RUNNING
 	collision_jump.disabled = state != Constants.PlayerState.JUMPING
@@ -54,10 +50,23 @@ func _process(_delta: float) -> void:
 			Constants.PlayerState.JUMPING: sprite_jump.play()
 			Constants.PlayerState.SLIDING: sprite_slide.play()
 
-
+func _ready() -> void:
+	var hitbox = Area2D.new()
+	hitbox.name = "PlayerHitBox"
+	add_child(hitbox)
+	var hitbox_shape = CollisionShape2D.new()
+	var box = RectangleShape2D.new()
+	box.size = Vector2(40, 60) 
+	hitbox_shape.shape = box
+	
+	hitbox.add_child(hitbox_shape)
+	hitbox.area_entered.connect(_on_obstacle_entered)
 func hit():
 	health = health-1
 	EventManager.emit_signal("player_hit", health)
-	# On death the Session ends the run (forced loss) and handles the results
-	# scene transition — see Session._on_player_hit.
 	
+	
+func _on_obstacle_entered(incoming_area: Area2D) -> void:
+	# Memeriksa apakah area yang masuk atau induk rintangannya memiliki grup "obstacle"
+	if incoming_area.is_in_group("obstacle") or incoming_area.get_parent().is_in_group("obstacle"):
+		hit()

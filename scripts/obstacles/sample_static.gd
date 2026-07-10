@@ -8,6 +8,7 @@ extends Obstacle
 func _ready() -> void:
 	area.monitoring = false
 	add_to_group("obstacle")
+	area.add_to_group("obstacle")
 
 func setup(_ses: Session, chance: float) -> void:
 	var spawned := randf() <= chance
