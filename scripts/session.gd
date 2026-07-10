@@ -35,8 +35,10 @@ var running_time: float
 var step: float = 0.0
 var _boost_factor: float = 0.0
 
-# TODO: update this value on difficulty selection screen
-var difficulty := Constants.SessionDifficulty.NORMAL
+# Set from the level-select choice, persisted on the EventManager autoload.
+# Member init runs before any _ready, so this is set before SegmentHandler._ready
+# reads it to spawn the opening segments.
+var difficulty := EventManager.selected_difficulty
 
 func _physics_process(delta: float) -> void:
 	# Session handles segment movement on the possibility we will need to
