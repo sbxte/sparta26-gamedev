@@ -13,6 +13,7 @@ extends Node2D
 @export_file("*.tscn") var filler1_segment: String
 @export_file("*.tscn") var filler2_segment: String
 @export_file("*.tscn") var filler3_segment: String
+@export_file("*.tscn") var bush_segment: String
 
 var last_segment: Segment
 var last_segment_idx := 0
@@ -42,11 +43,96 @@ func next_segment_packedscene() -> PackedScene:
 	# TODO: cross road segments
 	var loop: Array
 	if session.difficulty == Constants.SessionDifficulty.EASY:
-		loop = [itb_segment, filler3_segment, filler1_segment, filler2_segment, jatos_segment, filler3_segment, aa_segment, filler3_segment, griya_segment, filler1_segment, warteg_segment, itb_segment]
+		loop = [
+			itb_segment,
+			filler3_segment,
+			bush_segment,
+			filler1_segment,
+			filler2_segment,
+
+			jatos_segment,
+			filler3_segment,
+			bush_segment,
+
+			aa_segment,
+			filler3_segment,
+
+			griya_segment,
+			bush_segment,
+			filler1_segment,
+
+			warteg_segment,
+			filler2_segment,
+			bush_segment,
+			filler1_segment,
+			]
 	elif session.difficulty == Constants.SessionDifficulty.NORMAL:
-		loop = [itb_segment, filler3_segment, filler2_segment, filler3_segment, unpad_segment, filler2_segment, filler3_segment, filler2_segment, jatos_segment, filler3_segment, aa_segment, filler3_segment, griya_segment, filler1_segment, warteg_segment, itb_segment]
+		loop = [
+			itb_segment,
+			filler3_segment,
+			bush_segment,
+			filler2_segment,
+			bush_segment,
+			bush_segment,
+			filler3_segment,
+
+			unpad_segment,
+			filler2_segment,
+			bush_segment,
+			filler3_segment,
+			filler2_segment,
+
+			jatos_segment,
+			filler3_segment,
+			bush_segment,
+
+			aa_segment,
+			filler3_segment,
+
+			griya_segment,
+			bush_segment,
+			filler1_segment,
+
+			warteg_segment,
+			filler2_segment,
+			bush_segment,
+			filler1_segment,
+			]
 	else:
-		loop = [itb_segment, filler3_segment, filler2_segment, filler3_segment, unpad_segment, filler2_segment, filler3_segment, filler2_segment, jatos_segment, filler3_segment, aa_segment, filler3_segment, griya_segment, filler1_segment, warteg_segment, filler2_segment, filler1_segment, itb_segment]
+		loop = [
+			itb_segment,
+			filler3_segment,
+			bush_segment,
+			filler2_segment,
+			bush_segment,
+			bush_segment,
+			filler3_segment,
+
+			unpad_segment,
+			filler2_segment,
+			bush_segment,
+			filler3_segment,
+			filler2_segment,
+
+			jatos_segment,
+			filler3_segment,
+			bush_segment,
+
+			aa_segment,
+			filler3_segment,
+
+			griya_segment,
+			bush_segment,
+			filler1_segment,
+
+			warteg_segment,
+			filler2_segment,
+			bush_segment,
+			filler3_segment,
+			filler2_segment,
+			bush_segment,
+			filler1_segment,
+			]
 	
 	last_segment_idx = last_segment_idx % loop.size()
 	return load(loop[last_segment_idx])

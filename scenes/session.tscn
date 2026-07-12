@@ -128,6 +128,7 @@ warteg_segment = "res://scenes/segment/warteg.tscn"
 filler1_segment = "res://scenes/segment/filler1.tscn"
 filler2_segment = "res://scenes/segment/filler2.tscn"
 filler3_segment = "res://scenes/segment/filler3.tscn"
+bush_segment = "uid://c2rslsxlj5586"
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=910925497 node_paths=PackedStringArray("sprite_run", "collision_run", "sprite_jump", "collision_jump", "sprite_slide", "collision_slide")]
 position = Vector2(271, 774)
