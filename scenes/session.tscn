@@ -113,6 +113,8 @@ speed_curve = SubResource("Curve_jw3sc")
 time_to_max_speed = 5.0
 max_speed = 500.0
 player_ui = NodePath("PlayerUI")
+boost_amount = 1.5
+boost_ramp = 5.0
 
 [node name="Background" type="Sprite2D" parent="." unique_id=545987906]
 texture = ExtResource("20_1hh83")
