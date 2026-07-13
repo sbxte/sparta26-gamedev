@@ -44,6 +44,7 @@ func _ready() -> void:
 	# Dying (health hits 0) ends the run as a forced loss, no distance credit.
 	EventManager.player_hit.connect(_on_player_hit)
 	AudioManager.play_bgm('res://assets/audio/music/GIRLS_ LEGEND U (FINAL TEST) - 40Nix (I gave up making it myself, don_t forget to put on credits!!)mp3.mp3')
+	sus_percentage = 0
 
 func _on_player_hit(health: int) -> void:
 	if health == 0:
