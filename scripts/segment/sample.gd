@@ -4,9 +4,6 @@ extends Segment
 @export var segment_length: int
 @export var segment_name: String
 
-func init_segment(_ses: Session):
-	pass
-
 func destroy_segment():
 	pass
 
