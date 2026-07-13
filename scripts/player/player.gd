@@ -61,6 +61,19 @@ func _ready() -> void:
 	
 	hitbox.add_child(hitbox_shape)
 	hitbox.area_entered.connect(_on_obstacle_entered)
+	
+	# hitbox that will be disabled during slide
+	var hitbox2 = Area2D.new()
+	hitbox2.name = "PlayerHitBox2"
+	add_child(hitbox2)
+	var hitbox2_shape = CollisionShape2D.new()
+	hitbox2.position.y = -64
+	hitbox2_shape.shape = box
+	
+	hitbox.add_child(hitbox_shape)
+	hitbox.area_entered.connect(_on_obstacle_entered)
+	hitbox2.add_child(hitbox2_shape)
+	hitbox2.area_entered.connect(_on_obstacle_entered)
 func hit():
 	health = health-1
 	EventManager.emit_signal("player_hit", health)
