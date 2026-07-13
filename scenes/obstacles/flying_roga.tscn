@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnxdp"]
-size = Vector2(360, 204)
+size = Vector2(304, 204)
 
 [node name="FlyingRoga" type="Node2D" unique_id=1864811565 node_paths=PackedStringArray("sprite", "area")]
 script = ExtResource("1_h7ymt")
@@ -33,7 +33,7 @@ sprite_frames = SubResource("SpriteFrames_bnxdp")
 [node name="Area2D" type="Area2D" parent="." unique_id=2107855764]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1374475605]
-position = Vector2(0, 101)
+position = Vector2(-8, 101)
 shape = SubResource("RectangleShape2D_bnxdp")
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

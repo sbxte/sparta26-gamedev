@@ -31,7 +31,7 @@ speed = 30.0
 right = true
 
 [node name="FlyingRoga" parent="." unique_id=1151917989 instance=ExtResource("4_jv82p")]
-position = Vector2(1659, 555)
+position = Vector2(1928, 555)
 speed = 15.0
 base_spawn_chance = 0.25
 
@@ -47,6 +47,6 @@ speed = 30.0
 right = true
 
 [node name="FlyingRoga2" parent="." unique_id=989675761 instance=ExtResource("4_jv82p")]
-position = Vector2(3507, 555)
+position = Vector2(3776, 555)
 speed = 15.0
 base_spawn_chance = 0.25

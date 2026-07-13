@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://ctdd7rl56scey" path="res://assets/foregrounds/foreground.png" id="2_8p6pt"]
 [ext_resource type="Texture2D" uid="uid://ojtpdu02gccb" path="res://assets/backgrounds/griya.png" id="2_xtnfj"]
 [ext_resource type="PackedScene" uid="uid://cug1c72jtgr8j" path="res://scenes/obstacles/car.tscn" id="3_xtnfj"]
-[ext_resource type="PackedScene" uid="uid://ceyogol2mnyqk" path="res://scenes/obstacles/flying_roga.tscn" id="4_ddxy0"]
 
 [node name="GriyaSegment" type="Node2D" unique_id=1160094697]
 script = ExtResource("1_kckyk")
@@ -40,8 +39,3 @@ base_spawn_chance = 1.0
 position = Vector2(1707, 828)
 speed = 0.0
 base_spawn_chance = 0.7
-
-[node name="FlyingRoga" parent="." unique_id=263970194 instance=ExtResource("4_ddxy0")]
-position = Vector2(1255, 555)
-speed = 20.0
-base_spawn_chance = 0.25

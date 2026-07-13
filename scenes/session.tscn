@@ -110,6 +110,8 @@ size = Vector2(5000, 60)
 script = ExtResource("1_eemmi")
 segment_handler = NodePath("Segments")
 speed_curve = SubResource("Curve_jw3sc")
+time_to_max_speed = 5.0
+max_speed = 500.0
 player_ui = NodePath("PlayerUI")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=545987906]
@@ -133,6 +135,7 @@ bush_segment = "uid://c2rslsxlj5586"
 [node name="Player" type="CharacterBody2D" parent="." unique_id=910925497 node_paths=PackedStringArray("sprite_run", "collision_run", "sprite_jump", "collision_jump", "sprite_slide", "collision_slide")]
 position = Vector2(271, 774)
 script = ExtResource("1_w6gu6")
+jump_vel = 1100.0
 sprite_run = NodePath("Run")
 collision_run = NodePath("RunShape")
 sprite_jump = NodePath("Jump")

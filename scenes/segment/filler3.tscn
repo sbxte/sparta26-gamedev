@@ -46,12 +46,6 @@ position = Vector2(2410, 824)
 speed = 30.0
 right = true
 
-[node name="Car5" parent="." unique_id=848750707 instance=ExtResource("3_jtkxd")]
-position = Vector2(2716, 827)
-speed = 30.0
-right = true
-base_spawn_chance = 1.0
-
 [node name="Car6" parent="." unique_id=245724418 instance=ExtResource("3_jtkxd")]
 position = Vector2(3017, 822)
 speed = 30.0
